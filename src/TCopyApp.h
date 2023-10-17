@@ -14,7 +14,7 @@ public:
 
 private:
 //     TCopyDB*;
-    wxMainFrame* mFrameContainer;
+    wxMainFrame* mMainFrame;
 };
 
 #endif // TCOPYAPP_H

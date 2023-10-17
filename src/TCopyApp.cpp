@@ -3,14 +3,14 @@
 #include "TCopyApp.h"
 
 TCopyApp::TCopyApp()
-    : mFrameContainer{new wxMainFrame}
+    : mMainFrame{new wxMainFrame()}
 {}
 
 bool TCopyApp::OnInit()
 {
-    assert(mFrameContainer);
-    mFrameContainer->Show();
-    mFrameContainer->Centre();
+    assert(mMainFrame);
+    mMainFrame->Show();
+    mMainFrame->Centre();
 
     return true;
 }
