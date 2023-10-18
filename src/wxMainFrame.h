@@ -16,7 +16,7 @@ public:
     wxMainFrame();
     virtual ~wxMainFrame() = default;
 
-    void Display(Panel panel, bool show);
+    void Display(Panel panel);
 
 private:
     wxPanelStart* mFrameStart;

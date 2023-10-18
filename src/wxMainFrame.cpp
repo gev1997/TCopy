@@ -5,19 +5,11 @@ wxMainFrame::wxMainFrame()
     , mFrameStart{new wxPanelStart(this)}
     , mFrameMain{new wxPanelMain(this)}
 {
-    Display(wxMainFrame::Panel::Start, true);
-    Display(wxMainFrame::Panel::Main, false);
+    Display(wxMainFrame::Panel::Start);
 }
 
-void wxMainFrame::Display(Panel panel, bool show)
+void wxMainFrame::Display(Panel panel)
 {
-    switch (panel)
-    {
-        case Panel::Start:
-            mFrameStart->Display(show);
-            break;
-        case Panel::Main:
-            mFrameMain->Display(show);
-            break;
-    }
+    mFrameStart->Display(panel == Panel::Start);
+    mFrameMain->Display(panel == Panel::Main);
 }
