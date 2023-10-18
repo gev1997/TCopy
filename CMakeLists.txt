@@ -12,6 +12,8 @@ add_executable(TCopy
     src/TCopyApp.cpp
     src/wxMainFrame.h
     src/wxMainFrame.cpp
+    src/wxPanelBase.h
+    src/wxPanelBase.cpp
     src/wxPanelStart.h
     src/wxPanelStart.cpp
     src/wxPanelMain.h

@@ -1,19 +1,13 @@
 #ifndef WXPANELMAIN_H
 #define WXPANELMAIN_H
 
-#include <wx/panel.h>
-#include <wx/frame.h>
+#include "wxPanelBase.h"
 
-class wxPanelMain : public wxPanel
+class wxPanelMain : public wxPanelBase_
 {
 public:
     wxPanelMain(wxFrame* parent);
     virtual ~wxPanelMain() = default;
-
-    void Display(bool show);
-
-private:
-    const wxSize mSize;
 };
 
 #endif // WXPANELMAIN_H
