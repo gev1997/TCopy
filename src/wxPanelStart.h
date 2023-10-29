@@ -14,6 +14,11 @@ public:
     virtual ~wxPanelStart() = default;
 
 private:
+    void ButtonSourceClicked(wxCommandEvent& event);
+    void ButtonDestinationClicked(wxCommandEvent& event);
+    void ButtonLoadClicked(wxCommandEvent& event);
+
+private:
     wxTextCtrl* mEditSource;
     wxTextCtrl* mEditDestination;
     wxButton* mButtonSource;
