@@ -7,7 +7,7 @@
 class wxPanelBase_ : public wxPanel
 {
 public:
-    wxPanelBase_(wxFrame* parent);
+    wxPanelBase_(wxFrame* parent, const wxSize& size);
     virtual ~wxPanelBase_() = default;
 
     void Display(bool show);
