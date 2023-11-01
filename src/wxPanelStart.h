@@ -6,6 +6,7 @@
 #include <wx/checkbox.h>
 
 #include "wxPanelBase.h"
+#include "wxDirDlgButton.h"
 
 class wxPanelStart : public wxPanelBase_
 {
@@ -14,15 +15,13 @@ public:
     virtual ~wxPanelStart() = default;
 
 private:
-    void ButtonSourceClicked(wxCommandEvent& event);
-    void ButtonDestinationClicked(wxCommandEvent& event);
     void ButtonLoadClicked(wxCommandEvent& event);
 
 private:
     wxTextCtrl* mEditSource;
     wxTextCtrl* mEditDestination;
-    wxButton* mButtonSource;
-    wxButton* mButtonDestination;
+    wxDirDlgButton* mButtonSource;
+    wxDirDlgButton* mButtonDestination;
     wxButton* mButtonLoad;
     wxCheckBox* mSubFolders;
 };
