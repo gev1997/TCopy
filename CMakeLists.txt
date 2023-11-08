@@ -10,6 +10,8 @@ find_package(wxWidgets CONFIG REQUIRED)
 add_executable(TCopy
     src/TCopyApp.h
     src/TCopyApp.cpp
+    src/TCopyDB.h
+    src/TCopyDB.cpp
     src/wxMainFrame.h
     src/wxMainFrame.cpp
     src/wxPanelBase.h
