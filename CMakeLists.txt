@@ -20,8 +20,8 @@ add_executable(TCopy
     src/wxPanelStart.cpp
     src/wxPanelMain.h
     src/wxPanelMain.cpp
-    src/wxDirDlgButton.h
-    src/wxDirDlgButton.cpp
+    src/wxDirPicker.h
+    src/wxDirPicker.cpp
 )
 
 target_link_libraries(TCopy PRIVATE wx::base wx::core)

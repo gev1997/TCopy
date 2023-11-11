@@ -1,12 +1,11 @@
 #ifndef WXPANELSTART_H
 #define WXPANELSTART_H
 
-#include <wx/textctrl.h>
 #include <wx/button.h>
 #include <wx/checkbox.h>
 
 #include "wxPanelBase.h"
-#include "wxDirDlgButton.h"
+#include "wxDirPicker.h"
 
 class wxPanelStart : public wxPanelBase_
 {
@@ -18,10 +17,8 @@ private:
     void ButtonLoadClicked(wxCommandEvent& event);
 
 private:
-    wxTextCtrl* mEditSource;
-    wxTextCtrl* mEditDestination;
-    wxDirDlgButton* mButtonSource;
-    wxDirDlgButton* mButtonDestination;
+    wxDirPicker* mSourceDirPicker;
+    wxDirPicker* mDestinationDirPicker;
     wxButton* mButtonLoad;
     wxCheckBox* mSubFolders;
 };
