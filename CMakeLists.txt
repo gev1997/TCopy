@@ -22,6 +22,8 @@ add_executable(TCopy
     src/wxPanelMain.cpp
     src/wxDirPicker.h
     src/wxDirPicker.cpp
+    src/wxDirTextCtrl.h
+    src/wxDirTextCtrl.cpp
 )
 
 target_link_libraries(TCopy PRIVATE wx::base wx::core)
