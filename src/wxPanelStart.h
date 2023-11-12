@@ -14,7 +14,7 @@ public:
     virtual ~wxPanelStart() = default;
 
 private:
-    void ButtonLoadClicked(wxCommandEvent& event);
+    void OnLoadClicked(wxCommandEvent& event);
 
 private:
     wxDirPicker* mSourceDirPicker;

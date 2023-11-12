@@ -7,8 +7,8 @@ wxPanelStart::wxPanelStart(wxFrame* parent)
     , mButtonLoad{new wxButton(this, wxID_ANY, "Load", {365, 160}, {130, 40})}
     , mSubFolders{new wxCheckBox(this, wxID_ANY, "Subfolders", {10, 90}, {90, 20})}
 {
-    mButtonLoad->Bind(wxEVT_BUTTON, &wxPanelStart::ButtonLoadClicked, this);
+    mButtonLoad->Bind(wxEVT_BUTTON, &wxPanelStart::OnLoadClicked, this);
 }
 
-void wxPanelStart::ButtonLoadClicked(wxCommandEvent& event)
+void wxPanelStart::OnLoadClicked(wxCommandEvent& event)
 {}
