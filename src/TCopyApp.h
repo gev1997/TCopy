@@ -13,7 +13,9 @@ class TCopyApp : public wxApp
 public:
     TCopyApp();
     virtual ~TCopyApp() = default;
+
     bool OnInit() override;
+    wxMainFrame* GetMainFrame() const;
 
 private:
     std::unique_ptr<TCopyDB> mCopyDB;

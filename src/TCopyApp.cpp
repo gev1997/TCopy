@@ -17,4 +17,9 @@ bool TCopyApp::OnInit()
     return true;
 }
 
+wxMainFrame* TCopyApp::GetMainFrame() const
+{
+    return mMainFrame;
+}
+
 wxIMPLEMENT_APP(TCopyApp);
