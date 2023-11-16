@@ -19,8 +19,8 @@ public:
     void Display(Panel panel);
 
 private:
-    wxPanelStart* mFrameStart;
-    wxPanelMain* mFrameMain;
+    wxPanelStart* mPanelStart;
+    wxPanelMain* mPanelMain;
 };
 
 #endif // WXMAINFRAME_H

@@ -2,14 +2,14 @@
 
 wxMainFrame::wxMainFrame()
     : wxFrame{nullptr, wxID_ANY, "TCopy"}
-    , mFrameStart{new wxPanelStart(this)}
-    , mFrameMain{new wxPanelMain(this)}
+    , mPanelStart{new wxPanelStart(this)}
+    , mPanelMain{new wxPanelMain(this)}
 {
     Display(wxMainFrame::Panel::Start);
 }
 
 void wxMainFrame::Display(Panel panel)
 {
-    mFrameStart->Display(panel == Panel::Start);
-    mFrameMain->Display(panel == Panel::Main);
+    mPanelStart->Display(panel == Panel::Start);
+    mPanelMain->Display(panel == Panel::Main);
 }
