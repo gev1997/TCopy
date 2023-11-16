@@ -4,6 +4,8 @@
 #include <wx/panel.h>
 #include <wx/frame.h>
 
+class TCopyApp;
+
 class wxPanelBase_ : public wxPanel
 {
 public:
@@ -13,6 +15,7 @@ public:
     void Display(bool show);
 
 protected:
+    TCopyApp& mApp;
     wxSize mSize;
 };
 

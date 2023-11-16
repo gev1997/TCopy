@@ -1,4 +1,5 @@
 #include "wxPanelStart.h"
+#include "TCopyApp.h"
 
 wxPanelStart::wxPanelStart(wxFrame* parent)
     : wxPanelBase_{parent, {520, 250}}
@@ -11,4 +12,6 @@ wxPanelStart::wxPanelStart(wxFrame* parent)
 }
 
 void wxPanelStart::OnLoadClicked(wxCommandEvent& event)
-{}
+{
+    mApp.GetMainFrame()->Display(wxMainFrame::Panel::Main);
+}
