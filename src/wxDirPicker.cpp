@@ -11,6 +11,11 @@ wxDirPicker::wxDirPicker(wxWindow* parent, const wxString& label, const wxPoint&
     Bind(wxEVT_DIRPICKER_CHANGED, &wxDirPicker::OnDirPickerChanged, this);
 }
 
+bool wxDirPicker::IsDirectory() const
+{
+    return mTextCtrl->IsDirectory();
+}
+
 void wxDirPicker::OnDirPickerChanged(wxFileDirPickerEvent& event)
 {
     mTextCtrl->ValidatePath();

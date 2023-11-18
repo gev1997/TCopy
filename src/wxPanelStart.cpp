@@ -13,5 +13,11 @@ wxPanelStart::wxPanelStart(wxFrame* parent)
 
 void wxPanelStart::OnLoadClicked(wxCommandEvent& event)
 {
+    if (!mSourceDirPicker->IsDirectory() || !mDestinationDirPicker->IsDirectory())
+    {
+        // TODO: Error handling here
+        return;
+    }
+
     mApp.GetMainFrame()->Display(wxMainFrame::Panel::Main);
 }

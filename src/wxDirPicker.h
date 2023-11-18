@@ -11,6 +11,8 @@ public:
     wxDirPicker(wxWindow* parent, const wxString& label, const wxPoint& pos, const wxSize& size);
     virtual ~wxDirPicker() = default;
 
+    bool IsDirectory() const;
+
 private:
     void OnDirPickerChanged(wxFileDirPickerEvent& event);
 
