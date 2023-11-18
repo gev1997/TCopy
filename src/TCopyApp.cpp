@@ -22,4 +22,9 @@ wxMainFrame* TCopyApp::GetMainFrame() const
     return mMainFrame;
 }
 
+TCopyDB* TCopyApp::GetDB() const
+{
+    return mCopyDB.get();
+}
+
 wxIMPLEMENT_APP(TCopyApp);

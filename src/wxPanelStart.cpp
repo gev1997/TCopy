@@ -19,5 +19,11 @@ void wxPanelStart::OnLoadClicked(wxCommandEvent& event)
         return;
     }
 
+    const std::string sourcePath = mSourceDirPicker->GetTextCtrlValue().ToStdString();
+    const std::string destinationPath = mDestinationDirPicker->GetTextCtrlValue().ToStdString();
+
+    // TODO: Maybe need to check Load() fail here ?
+    mApp.GetDB()->Load(sourcePath, destinationPath, mSubFolders->IsChecked());
+
     mApp.GetMainFrame()->Display(wxMainFrame::Panel::Main);
 }

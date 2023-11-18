@@ -16,6 +16,7 @@ public:
 
     bool OnInit() override;
     wxMainFrame* GetMainFrame() const;
+    TCopyDB* GetDB() const;
 
 private:
     std::unique_ptr<TCopyDB> mCopyDB;

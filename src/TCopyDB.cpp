@@ -22,3 +22,8 @@ void TCopyDB::SetDestinationPath(const fs::path& path)
 {
     mDestinationPath = path;
 }
+
+void TCopyDB::Load(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders)
+{
+
+}
