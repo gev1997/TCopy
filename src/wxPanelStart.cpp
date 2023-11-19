@@ -1,5 +1,5 @@
 #include "wxPanelStart.h"
-#include "TCopyApp.h"
+#include "FileSyncApp.h"
 
 wxPanelStart::wxPanelStart(wxFrame* parent)
     : wxPanelBase_{parent, {520, 250}}

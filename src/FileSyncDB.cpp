@@ -1,29 +1,29 @@
-#include "TCopyDB.h"
+#include "FileSyncDB.h"
 
-TCopyDB::TCopyDB()
+FileSyncDB::FileSyncDB()
 {}
 
-const fs::path& TCopyDB::GetSourcePath() const
+const fs::path& FileSyncDB::GetSourcePath() const
 {
     return mSourcePath;
 }
 
-const fs::path& TCopyDB::GetDestinationPath() const
+const fs::path& FileSyncDB::GetDestinationPath() const
 {
     return mDestinationPath;
 }
 
-void TCopyDB::SetSourcePath(const fs::path& path)
+void FileSyncDB::SetSourcePath(const fs::path& path)
 {
     mSourcePath = path;
 }
 
-void TCopyDB::SetDestinationPath(const fs::path& path)
+void FileSyncDB::SetDestinationPath(const fs::path& path)
 {
     mDestinationPath = path;
 }
 
-void TCopyDB::Load(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders)
+void FileSyncDB::Load(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders)
 {
 
 }

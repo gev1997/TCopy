@@ -1,7 +1,7 @@
 #include "wxMainFrame.h"
 
 wxMainFrame::wxMainFrame()
-    : wxFrame{nullptr, wxID_ANY, "TCopy"}
+    : wxFrame{nullptr, wxID_ANY, "File Sync"}
     , mPanelStart{new wxPanelStart(this)}
     , mPanelMain{new wxPanelMain(this)}
 {

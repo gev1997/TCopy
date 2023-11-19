@@ -1,16 +1,16 @@
-#ifndef TCOPYDB_H
-#define TCOPYDB_H
+#ifndef FILESYNCDB_H
+#define FILESYNCDB_H
 
 #include <string>
 #include <filesystem>
 
 namespace fs = std::filesystem;
 
-class TCopyDB
+class FileSyncDB
 {
 public:
-    TCopyDB();
-    ~TCopyDB() = default;
+    FileSyncDB();
+    ~FileSyncDB() = default;
 
     const fs::path& GetSourcePath() const;
     const fs::path& GetDestinationPath() const;
@@ -23,4 +23,4 @@ private:
     fs::path mDestinationPath;
 };
 
-#endif // TCOPYDB_H
+#endif // FILESYNCDB_H

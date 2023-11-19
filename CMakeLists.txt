@@ -2,16 +2,16 @@ cmake_minimum_required(VERSION 3.20)
 
 include(vcpkg/vcpkg.cmake)
 
-project(TCopy VERSION 1)
+project(FileSync VERSION 1)
 set(CMAKE_CXX_STANDARD 20)
 
 find_package(wxWidgets CONFIG REQUIRED)
 
-add_executable(TCopy
-    src/TCopyApp.h
-    src/TCopyApp.cpp
-    src/TCopyDB.h
-    src/TCopyDB.cpp
+add_executable(FileSync
+    src/FileSyncApp.h
+    src/FileSyncApp.cpp
+    src/FileSyncDB.h
+    src/FileSyncDB.cpp
     src/wxMainFrame.h
     src/wxMainFrame.cpp
     src/wxPanelBase.h
@@ -26,4 +26,4 @@ add_executable(TCopy
     src/wxDirTextCtrl.cpp
 )
 
-target_link_libraries(TCopy PRIVATE wx::base wx::core)
+target_link_libraries(FileSync PRIVATE wx::base wx::core)

@@ -1,13 +1,13 @@
 #include <iostream>
 
-#include "TCopyApp.h"
+#include "FileSyncApp.h"
 
-TCopyApp::TCopyApp()
+FileSyncApp::FileSyncApp()
     : mMainFrame{new wxMainFrame()}
-    , mCopyDB{new TCopyDB()}
+    , mCopyDB{new FileSyncDB()}
 {}
 
-bool TCopyApp::OnInit()
+bool FileSyncApp::OnInit()
 {
     assert(mMainFrame);
     assert(mCopyDB);
@@ -17,14 +17,14 @@ bool TCopyApp::OnInit()
     return true;
 }
 
-wxMainFrame* TCopyApp::GetMainFrame() const
+wxMainFrame* FileSyncApp::GetMainFrame() const
 {
     return mMainFrame;
 }
 
-TCopyDB* TCopyApp::GetDB() const
+FileSyncDB* FileSyncApp::GetDB() const
 {
     return mCopyDB.get();
 }
 
-wxIMPLEMENT_APP(TCopyApp);
+wxIMPLEMENT_APP(FileSyncApp);

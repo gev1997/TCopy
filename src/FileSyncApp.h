@@ -1,26 +1,26 @@
-#ifndef TCOPYAPP_H
-#define TCOPYAPP_H
+#ifndef FILESYNCAPP_H
+#define FILESYNCAPP_H
 
 #include <memory>
 
 #include <wx/app.h>
 
 #include "wxMainFrame.h"
-#include "TCopyDB.h"
+#include "FileSyncDB.h"
 
-class TCopyApp : public wxApp
+class FileSyncApp : public wxApp
 {
 public:
-    TCopyApp();
-    virtual ~TCopyApp() = default;
+    FileSyncApp();
+    virtual ~FileSyncApp() = default;
 
     bool OnInit() override;
     wxMainFrame* GetMainFrame() const;
-    TCopyDB* GetDB() const;
+    FileSyncDB* GetDB() const;
 
 private:
-    std::unique_ptr<TCopyDB> mCopyDB;
+    std::unique_ptr<FileSyncDB> mCopyDB;
     wxMainFrame* mMainFrame;
 };
 
-#endif // TCOPYAPP_H
+#endif // FILESYNCAPP_H

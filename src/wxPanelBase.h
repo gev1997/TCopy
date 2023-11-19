@@ -4,7 +4,7 @@
 #include <wx/panel.h>
 #include <wx/frame.h>
 
-class TCopyApp;
+class FileSyncApp;
 
 class wxPanelBase_ : public wxPanel
 {
@@ -15,7 +15,7 @@ public:
     void Display(bool show);
 
 protected:
-    TCopyApp& mApp;
+    FileSyncApp& mApp;
     wxSize mSize;
 };
 
