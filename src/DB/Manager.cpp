@@ -1,3 +1,5 @@
+#include <ranges>
+
 #include "Manager.h"
 
 DB::Manager::Manager()
@@ -40,17 +42,14 @@ void DB::Manager::Load(const fs::path& sourcePath, const fs::path& destinationPa
 template <typename Iter>
 void DB::Manager::_Load()
 {
-    for (const fs::directory_entry& entry : Iter(mSourcePath))
+    auto filtered_directory = Iter(mSourcePath)
+                              | std::ranges::views::filter([](const auto& entry) { return entry.is_regular_file(); })
+                              | std::ranges::views::filter([](const auto& entry) { return !fs::path{entry}.extension().empty(); });
+
+    for (const auto& entry : filtered_directory)
     {
-        if (!entry.is_regular_file())
-            continue;
-
-        const DB::File file(fs::path{entry});
+        const DB::File file(entry);
         mFiles.insert(file);
-
-        const std::string extension = file.GetExtension();
-
-        if (!extension.empty())
-            mExtensions.insert(extension);
+        mExtensions.insert(file.GetExtension());
     }
 }
