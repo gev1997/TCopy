@@ -11,6 +11,11 @@ bool wxDirTextCtrl::IsDirectory() const
     return fs::is_directory(GetValue().ToStdString());
 }
 
+void wxDirTextCtrl::ChangeValue(const wxString& value)
+{
+    SetValue(value);
+}
+
 void wxDirTextCtrl::ValidatePath()
 {
     SetForegroundColour(IsDirectory() ? *wxBLACK : *wxRED);
@@ -21,4 +26,3 @@ void wxDirTextCtrl::OnTextChanged(wxCommandEvent& event)
 {
     ValidatePath();
 }
-

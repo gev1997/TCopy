@@ -14,9 +14,6 @@ public:
     bool IsDirectory() const;
 
 private:
-    void OnDirPickerChanged(wxFileDirPickerEvent& event);
-
-private:
     wxDirTextCtrl* mTextCtrl;
 };
 
