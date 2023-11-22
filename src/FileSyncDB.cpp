@@ -1,29 +1,29 @@
 #include "FileSyncDB.h"
 
-FileSyncDB::FileSyncDB()
+DB::Manager::Manager()
 {}
 
-const fs::path& FileSyncDB::GetSourcePath() const
+const fs::path& DB::Manager::GetSourcePath() const
 {
     return mSourcePath;
 }
 
-const fs::path& FileSyncDB::GetDestinationPath() const
+const fs::path& DB::Manager::GetDestinationPath() const
 {
     return mDestinationPath;
 }
 
-void FileSyncDB::SetSourcePath(const fs::path& path)
+void DB::Manager::SetSourcePath(const fs::path& path)
 {
     mSourcePath = path;
 }
 
-void FileSyncDB::SetDestinationPath(const fs::path& path)
+void DB::Manager::SetDestinationPath(const fs::path& path)
 {
     mDestinationPath = path;
 }
 
-void FileSyncDB::Load(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders)
+void DB::Manager::Load(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders)
 {
 
 }

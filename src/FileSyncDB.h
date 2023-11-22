@@ -6,11 +6,14 @@
 
 namespace fs = std::filesystem;
 
-class FileSyncDB
+namespace DB
+{
+
+class Manager
 {
 public:
-    FileSyncDB();
-    ~FileSyncDB() = default;
+    Manager();
+    ~Manager() = default;
 
     const fs::path& GetSourcePath() const;
     const fs::path& GetDestinationPath() const;
@@ -22,5 +25,7 @@ private:
     fs::path mSourcePath;
     fs::path mDestinationPath;
 };
+
+};  // namespace DB
 
 #endif // FILESYNCDB_H

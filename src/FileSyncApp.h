@@ -16,10 +16,10 @@ public:
 
     bool OnInit() override;
     wxMainFrame* GetMainFrame() const;
-    FileSyncDB* GetDB() const;
+    DB::Manager* GetDB() const;
 
 private:
-    std::unique_ptr<FileSyncDB> mCopyDB;
+    std::unique_ptr<DB::Manager> mCopyDB;
     wxMainFrame* mMainFrame;
 };
 

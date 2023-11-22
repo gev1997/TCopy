@@ -4,7 +4,7 @@
 
 FileSyncApp::FileSyncApp()
     : mMainFrame{new wxMainFrame()}
-    , mCopyDB{new FileSyncDB()}
+    , mCopyDB{new DB::Manager()}
 {}
 
 bool FileSyncApp::OnInit()
@@ -22,7 +22,7 @@ wxMainFrame* FileSyncApp::GetMainFrame() const
     return mMainFrame;
 }
 
-FileSyncDB* FileSyncApp::GetDB() const
+DB::Manager* FileSyncApp::GetDB() const
 {
     return mCopyDB.get();
 }
