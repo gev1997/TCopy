@@ -10,8 +10,8 @@ find_package(wxWidgets CONFIG REQUIRED)
 add_executable(FileSync
     src/FileSyncApp.h
     src/FileSyncApp.cpp
-    src/FileSyncDB.h
-    src/FileSyncDB.cpp
+    src/Manager.h
+    src/Manager.cpp
     src/DBFile.h
     src/DBFile.cpp
     src/wxMainFrame.h

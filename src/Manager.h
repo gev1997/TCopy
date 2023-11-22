@@ -1,5 +1,5 @@
-#ifndef FILESYNCDB_H
-#define FILESYNCDB_H
+#ifndef MANAGER_H
+#define MANAGER_H
 
 #include <string>
 #include <filesystem>
@@ -28,4 +28,4 @@ private:
 
 };  // namespace DB
 
-#endif // FILESYNCDB_H
+#endif // MANAGER_H

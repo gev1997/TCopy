@@ -6,7 +6,7 @@
 #include <wx/app.h>
 
 #include "wxMainFrame.h"
-#include "FileSyncDB.h"
+#include "Manager.h"
 
 class FileSyncApp : public wxApp
 {
