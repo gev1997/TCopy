@@ -1,5 +1,5 @@
-#ifndef DBFILE_H
-#define DBFILE_H
+#ifndef FILE_H
+#define FILE_H
 
 #include <string>
 #include <filesystem>
@@ -8,6 +8,7 @@ namespace fs = std::filesystem;
 
 namespace DB
 {
+
 class File
 {
 public:
@@ -29,4 +30,4 @@ private:
 
 }; // namespace DB
 
-#endif // DBFILE_H
+#endif // FILE_H

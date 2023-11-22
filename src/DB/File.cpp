@@ -1,4 +1,4 @@
-#include "DBFile.h"
+#include "File.h"
 
 DB::File::File(const fs::path& path)
     : mPath{path}

@@ -8,12 +8,12 @@ set(CMAKE_CXX_STANDARD 20)
 find_package(wxWidgets CONFIG REQUIRED)
 
 add_executable(FileSync
+    src/DB/Manager.h
+    src/DB/Manager.cpp
+    src/DB/File.h
+    src/DB/File.cpp
     src/FileSyncApp.h
     src/FileSyncApp.cpp
-    src/Manager.h
-    src/Manager.cpp
-    src/DBFile.h
-    src/DBFile.cpp
     src/wxMainFrame.h
     src/wxMainFrame.cpp
     src/wxPanelBase.h
