@@ -1,5 +1,4 @@
-#ifndef FILE_H
-#define FILE_H
+#pragma once
 
 #include <string>
 #include <filesystem>
@@ -29,5 +28,3 @@ private:
 };
 
 }; // namespace DB
-
-#endif // FILE_H

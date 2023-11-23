@@ -1,5 +1,4 @@
-#ifndef FILESYNCAPP_H
-#define FILESYNCAPP_H
+#pragma once
 
 #include <memory>
 
@@ -22,5 +21,3 @@ private:
     wxMainFrame* mMainFrame;
     DB::Manager mCopyDB;
 };
-
-#endif // FILESYNCAPP_H

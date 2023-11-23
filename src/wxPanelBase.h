@@ -1,5 +1,4 @@
-#ifndef WXPANELBASE_H
-#define WXPANELBASE_H
+#pragma once
 
 #include <wx/panel.h>
 #include <wx/frame.h>
@@ -18,5 +17,3 @@ protected:
     FileSyncApp& mApp;
     wxSize mSize;
 };
-
-#endif // WXPANELBASE_H

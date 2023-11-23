@@ -1,5 +1,4 @@
-#ifndef WXPANELSTART_H
-#define WXPANELSTART_H
+#pragma once
 
 #include <wx/button.h>
 #include <wx/checkbox.h>
@@ -22,5 +21,3 @@ private:
     wxButton* mButtonLoad;
     wxCheckBox* mSubFolders;
 };
-
-#endif // WXPANELSTART_H

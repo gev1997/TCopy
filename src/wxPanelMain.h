@@ -1,5 +1,4 @@
-#ifndef WXPANELMAIN_H
-#define WXPANELMAIN_H
+#pragma once
 
 #include "wxPanelBase.h"
 
@@ -9,5 +8,3 @@ public:
     wxPanelMain(wxFrame* parent);
     virtual ~wxPanelMain() = default;
 };
-
-#endif // WXPANELMAIN_H

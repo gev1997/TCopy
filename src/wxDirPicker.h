@@ -1,5 +1,4 @@
-#ifndef WXDIRPICKER
-#define WXDIRPICKER
+#pragma once
 
 #include <wx/filepicker.h>
 
@@ -16,5 +15,3 @@ public:
 private:
     wxDirTextCtrl* mTextCtrl;
 };
-
-#endif // WXDIRPICKER

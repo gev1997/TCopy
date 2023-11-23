@@ -1,5 +1,4 @@
-#ifndef WXDIRTEXTCTRL
-#define WXDIRTEXTCTRL
+#pragma once
 
 #include <filesystem>
 
@@ -20,5 +19,3 @@ private:
     void ChangeValue(const wxString& value) override;
     void OnTextChanged(wxCommandEvent& event);
 };
-
-#endif // WXDIRTEXTCTRL

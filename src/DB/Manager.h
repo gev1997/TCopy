@@ -1,5 +1,4 @@
-#ifndef MANAGER_H
-#define MANAGER_H
+#pragma once
 
 #include <set>
 #include <string>
@@ -37,5 +36,3 @@ private:
 };
 
 };  // namespace DB
-
-#endif // MANAGER_H

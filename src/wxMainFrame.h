@@ -1,5 +1,4 @@
-#ifndef WXMAINFRAME_H
-#define WXMAINFRAME_H
+#pragma once
 
 #include <iostream>
 
@@ -22,5 +21,3 @@ private:
     wxPanelStart* mPanelStart;
     wxPanelMain* mPanelMain;
 };
-
-#endif // WXMAINFRAME_H
