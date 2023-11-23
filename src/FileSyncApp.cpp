@@ -4,27 +4,26 @@
 
 FileSyncApp::FileSyncApp()
     : mMainFrame{new wxMainFrame()}
-    , mCopyDB{new DB::Manager()}
+    , mCopyDB{}
 {}
 
 bool FileSyncApp::OnInit()
 {
     assert(mMainFrame);
-    assert(mCopyDB);
     mMainFrame->Show();
     mMainFrame->Centre();
 
     return true;
 }
 
-wxMainFrame* FileSyncApp::GetMainFrame() const
+wxMainFrame& FileSyncApp::GetMainFrame()
 {
-    return mMainFrame;
+    return *mMainFrame;
 }
 
-DB::Manager* FileSyncApp::GetDB() const
+DB::Manager& FileSyncApp::GetDB()
 {
-    return mCopyDB.get();
+    return mCopyDB;
 }
 
 wxIMPLEMENT_APP(FileSyncApp);

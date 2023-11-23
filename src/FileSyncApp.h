@@ -15,12 +15,12 @@ public:
     virtual ~FileSyncApp() = default;
 
     bool OnInit() override;
-    wxMainFrame* GetMainFrame() const;
-    DB::Manager* GetDB() const;
+    wxMainFrame& GetMainFrame();
+    DB::Manager& GetDB();
 
 private:
-    std::unique_ptr<DB::Manager> mCopyDB;
     wxMainFrame* mMainFrame;
+    DB::Manager mCopyDB;
 };
 
 #endif // FILESYNCAPP_H
