@@ -14,10 +14,10 @@ public:
     virtual ~wxDirTextCtrl() = default;
 
     bool IsDirectory() const;
-    void ChangeValue(const wxString& value) override;
 
 private:
     void ValidatePath();
+    void ChangeValue(const wxString& value) override;
     void OnTextChanged(wxCommandEvent& event);
 };
 
