@@ -5,8 +5,9 @@ wxDirPicker::wxDirPicker(wxWindow* parent, const wxString& label, const wxPoint&
     , mTextCtrl{new wxDirTextCtrl(this, {0, 3}, {405, 23})}
 {
     GetPickerCtrl()->SetLabel(label);
-    delete GetTextCtrl();
-    SetTextCtrl(mTextCtrl);
+
+    if (m_text) m_text->Destroy();
+    m_text = mTextCtrl;
 }
 
 bool wxDirPicker::IsDirectory() const
