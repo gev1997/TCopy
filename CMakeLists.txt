@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 find_package(wxWidgets CONFIG REQUIRED)
 
-add_executable(FileSync
+add_executable(FileSync WIN32
     src/DB/Manager.h
     src/DB/Manager.cpp
     src/DB/File.h
