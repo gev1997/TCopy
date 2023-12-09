@@ -26,6 +26,8 @@ add_executable(FileSync WIN32
     src/wxDirPicker.cpp
     src/wxDirTextCtrl.h
     src/wxDirTextCtrl.cpp
+    src/wxFileStaticBox.h
+    src/wxFileStaticBox.cpp
 )
 
 target_link_libraries(FileSync PRIVATE wx::base wx::core)
