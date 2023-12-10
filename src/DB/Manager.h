@@ -31,7 +31,7 @@ private:
     fs::path mSourcePath;
     fs::path mDestinationPath;
     bool mSubFolders;
-    std::set<File> mFiles;
+    std::multiset<File> mFiles;
     std::set<std::string> mExtensions;
 };
 
