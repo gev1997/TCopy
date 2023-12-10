@@ -3,6 +3,8 @@
 #include <string>
 #include <filesystem>
 
+#include <wx/datetime.h>
+
 namespace fs = std::filesystem;
 
 namespace DB
@@ -25,6 +27,7 @@ public:
 
 private:
     const fs::path mPath;
+    const wxDateTime mDateTime;
 };
 
 }; // namespace DB
