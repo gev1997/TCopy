@@ -1,7 +1,9 @@
 #include "wxMainFrame.h"
+#include "FileSyncApp.h"
 
 wxMainFrame::wxMainFrame()
     : wxFrame{nullptr, wxID_ANY, "File Sync"}
+    , mApp{dynamic_cast<FileSyncApp&>(*wxApp::GetInstance())}
     , mPanelStart{new wxPanelStart(this)}
     , mPanelMain{new wxPanelMain(this)}
 {

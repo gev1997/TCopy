@@ -7,6 +7,8 @@
 #include "wxPanelStart.h"
 #include "wxPanelMain.h"
 
+class FileSyncApp;
+
 class wxMainFrame : public wxFrame
 {
 public:
@@ -18,6 +20,7 @@ public:
     void Display(Panel panel);
 
 private:
+    FileSyncApp& mApp;
     wxPanelStart* mPanelStart;
     wxPanelMain* mPanelMain;
 };
