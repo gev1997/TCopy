@@ -25,5 +25,5 @@ void wxPanelStart::OnLoadClicked(wxCommandEvent& event)
     // TODO: Maybe need to check Load() fail here ?
     mApp.GetDB().Load(sourcePath, destinationPath, mSubFolders->IsChecked());
 
-    mApp.GetMainFrame().Display(wxMainFrame::Panel::Main);
+    mApp.GetMainFrame().Loaded();
 }

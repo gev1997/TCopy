@@ -1,5 +1,7 @@
 #pragma once
 
+#include <wx/button.h>
+
 #include "wxPanelBase.h"
 #include "wxFileStaticBox.h"
 
@@ -10,5 +12,9 @@ public:
     virtual ~wxPanelMain() = default;
 
 private:
+    void OnBackClicked(wxCommandEvent& event);
+
+private:
     wxFileStaticBox* mFileStaticBox;
+    wxButton* mButtonBack;
 };

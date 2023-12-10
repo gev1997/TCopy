@@ -15,3 +15,13 @@ void wxMainFrame::Display(Panel panel)
     mPanelStart->Display(panel == Panel::Start);
     mPanelMain->Display(panel == Panel::Main);
 }
+
+void wxMainFrame::Loaded()
+{
+    Display(wxMainFrame::Panel::Main);
+}
+
+void wxMainFrame::Back()
+{
+    Display(wxMainFrame::Panel::Start);
+}
