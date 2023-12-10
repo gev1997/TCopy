@@ -17,9 +17,11 @@ public:
     wxMainFrame();
     virtual ~wxMainFrame() = default;
 
-    void Display(Panel panel);
     void Loaded();
     void Back();
+
+private:
+    void Display(Panel panel);
 
 private:
     FileSyncApp& mApp;
