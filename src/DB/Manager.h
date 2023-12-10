@@ -19,8 +19,6 @@ public:
 
     const fs::path& GetSourcePath() const;
     const fs::path& GetDestinationPath() const;
-    void SetSourcePath(const fs::path& path);
-    void SetDestinationPath(const fs::path& path);
     void Load(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders);
 
 private:
