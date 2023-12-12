@@ -11,6 +11,9 @@ namespace fs = std::filesystem;
 namespace DB
 {
 
+using FileType = std::multiset<File>;
+using ExtensionType = std::set<std::string>;
+
 class Manager
 {
 public:
@@ -29,8 +32,8 @@ private:
     fs::path mSourcePath;
     fs::path mDestinationPath;
     bool mSubFolders;
-    std::multiset<File> mFiles;
-    std::set<std::string> mExtensions;
+    FileType mFiles;
+    ExtensionType mExtensions;
 };
 
 };  // namespace DB
