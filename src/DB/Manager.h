@@ -22,6 +22,8 @@ public:
 
     const fs::path& GetSourcePath() const;
     const fs::path& GetDestinationPath() const;
+    const FileType& GetFiles() const;
+    const ExtensionType& GetExtensions() const;
     void Load(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders);
 
 private:

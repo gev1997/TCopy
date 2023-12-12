@@ -15,6 +15,16 @@ const fs::path& DB::Manager::GetDestinationPath() const
     return mDestinationPath;
 }
 
+const DB::FileType& DB::Manager::GetFiles() const
+{
+    return mFiles;
+}
+
+const DB::ExtensionType& DB::Manager::GetExtensions() const
+{
+    return mExtensions;
+}
+
 void DB::Manager::Load(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders)
 {
     mSourcePath = sourcePath;
