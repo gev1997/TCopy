@@ -18,6 +18,7 @@ void wxMainFrame::Display(Panel panel)
 
 void wxMainFrame::Loaded()
 {
+    mPanelMain->FillControlsData();
     Display(wxMainFrame::Panel::Main);
 }
 

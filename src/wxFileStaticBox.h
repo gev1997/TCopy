@@ -10,6 +10,8 @@ public:
     wxFileStaticBox(wxWindow* parent);
     virtual ~wxFileStaticBox() = default;
 
+    void FillControlsData(const DB::FileType& files);
+
 private:
     wxCheckListBox* mFileListBox;
     wxCheckBox* mSelectAll;

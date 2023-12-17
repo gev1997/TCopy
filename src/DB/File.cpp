@@ -22,6 +22,12 @@ std::string DB::File::GetExtension() const
     return mPath.extension().string();
 }
 
+std::string DB::File::GetFormatName() const
+{
+    const wxString formatDateTime{mDateTime.FormatDate() + " | " + mDateTime.FormatTime()};
+    return formatDateTime.ToStdString() + " | " + GetFileName();
+}
+
 bool DB::File::operator<(const File& rhs) const
 {
     return mDateTime.IsLaterThan(rhs.mDateTime);

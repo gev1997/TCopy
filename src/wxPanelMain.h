@@ -11,6 +11,8 @@ public:
     wxPanelMain(wxFrame* parent);
     virtual ~wxPanelMain() = default;
 
+    void FillControlsData();
+
 private:
     void OnBackClicked(wxCommandEvent& event);
 

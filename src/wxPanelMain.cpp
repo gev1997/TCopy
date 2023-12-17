@@ -9,6 +9,11 @@ wxPanelMain::wxPanelMain(wxFrame* parent)
     mButtonBack->Bind(wxEVT_BUTTON, &wxPanelMain::OnBackClicked, this);
 }
 
+void wxPanelMain::FillControlsData()
+{
+    mFileStaticBox->FillControlsData(mApp.GetDB().GetFiles());
+}
+
 void wxPanelMain::OnBackClicked(wxCommandEvent& event)
 {
     mApp.GetMainFrame().Back();

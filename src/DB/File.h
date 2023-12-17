@@ -14,6 +14,7 @@ public:
 
     std::string GetFileName() const;
     std::string GetExtension() const;
+    std::string GetFormatName() const;
     // fs::path GetParentPath();
 
     bool operator<(const File& rhs) const;
