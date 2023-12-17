@@ -1,7 +1,5 @@
 #pragma once
 
-#include <iostream>
-
 #include <wx/frame.h>
 
 #include "wxPanelStart.h"

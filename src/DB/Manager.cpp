@@ -1,5 +1,3 @@
-#include <ranges>
-
 #include "Manager.h"
 
 DB::Manager::Manager()

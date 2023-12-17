@@ -1,11 +1,6 @@
 #pragma once
 
-#include <string>
-#include <filesystem>
-
 #include <wx/datetime.h>
-
-namespace fs = std::filesystem;
 
 namespace DB
 {

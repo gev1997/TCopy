@@ -1,10 +1,6 @@
 #pragma once
 
-#include <filesystem>
-
 #include <wx/textctrl.h>
-
-namespace fs = std::filesystem;
 
 class wxDirTextCtrl : public wxTextCtrl
 {

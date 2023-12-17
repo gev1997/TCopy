@@ -1,7 +1,5 @@
 #pragma once
 
-#include <memory>
-
 #include <wx/app.h>
 
 #include "wxMainFrame.h"

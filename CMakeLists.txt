@@ -30,4 +30,5 @@ add_executable(FileSync WIN32
     src/wxFileStaticBox.cpp
 )
 
+target_precompile_headers(FileSync PRIVATE src/FileSync_precomp.h)
 target_link_libraries(FileSync PRIVATE wx::base wx::core)

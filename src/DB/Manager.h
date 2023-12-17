@@ -1,18 +1,9 @@
 #pragma once
 
-#include <set>
-#include <string>
-#include <filesystem>
-
 #include "File.h"
-
-namespace fs = std::filesystem;
 
 namespace DB
 {
-
-using FileType = std::multiset<File>;
-using ExtensionType = std::set<std::string>;
 
 class Manager
 {
