@@ -7,6 +7,7 @@ wxMainFrame::wxMainFrame()
     , mPanelStart{new wxPanelStart(this)}
     , mPanelMain{new wxPanelMain(this)}
 {
+    SetWindowStyle(GetWindowStyle() & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX));
     Display(wxMainFrame::Panel::Start);
 }
 

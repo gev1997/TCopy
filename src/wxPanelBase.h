@@ -15,5 +15,4 @@ public:
 
 protected:
     FileSyncApp& mApp;
-    wxSize mSize;
 };

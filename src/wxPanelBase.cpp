@@ -2,9 +2,8 @@
 #include "FileSyncApp.h"
 
 wxPanelBase_::wxPanelBase_(wxFrame* parent, const wxSize& size)
-    : wxPanel{parent}
+    : wxPanel{parent, wxID_ANY, wxDefaultPosition, size}
     , mApp{dynamic_cast<FileSyncApp&>(*wxApp::GetInstance())}
-    , mSize{size}
 {}
 
 void wxPanelBase_::Display(bool show)
@@ -13,8 +12,7 @@ void wxPanelBase_::Display(bool show)
     {
         wxWindow* parent = GetParent();
         assert(parent);
-        SetSize(mSize);
-        parent->SetSizeHints(mSize, mSize);
+        parent->SetSize(GetSize());
     }
 
     Show(show);
