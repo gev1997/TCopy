@@ -28,6 +28,8 @@ add_executable(FileSync WIN32
     src/wxDirTextCtrl.cpp
     src/wxFileStaticBox.h
     src/wxFileStaticBox.cpp
+    src/wxExtensionsStaticBox.h
+    src/wxExtensionsStaticBox.cpp
 )
 
 target_precompile_headers(FileSync PRIVATE src/FileSync_precomp.h)

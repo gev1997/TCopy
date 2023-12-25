@@ -4,6 +4,7 @@
 
 #include "wxPanelBase.h"
 #include "wxFileStaticBox.h"
+#include "wxExtensionsStaticBox.h"
 
 class wxPanelMain : public wxPanelBase_
 {
@@ -18,5 +19,6 @@ private:
 
 private:
     wxFileStaticBox* mFileStaticBox;
+    wxExtensionsStaticBox* mExtensionsStaticBox;
     wxButton* mButtonBack;
 };
