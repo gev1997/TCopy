@@ -11,7 +11,7 @@ public:
     wxExtensionsStaticBox(wxWindow* parent);
     virtual ~wxExtensionsStaticBox() = default;
 
-    void FillControlsData(const DB::ExtensionType& files);
+    void FillControlsData(const DB::ExtensionType& extensions);
 
 private:
     wxCheckListBox* mExtensionsListBox;
