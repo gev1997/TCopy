@@ -23,11 +23,18 @@ const DB::ExtensionType& DB::Manager::GetExtensions() const
     return mExtensions;
 }
 
-void DB::Manager::Load(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders)
+void DB::Manager::SetData(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders)
 {
     mSourcePath = sourcePath;
     mDestinationPath = destinationPath;
     mSubFolders = subFolders;
+}
+
+void DB::Manager::Load()
+{
+    assert(!mSourcePath.empty());
+    assert(!mDestinationPath.empty());
+
     mFiles.clear();
     mExtensions.clear();
 

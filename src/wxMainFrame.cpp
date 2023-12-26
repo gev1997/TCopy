@@ -17,8 +17,10 @@ void wxMainFrame::Display(Panel panel)
     mPanelMain->Display(panel == Panel::Main);
 }
 
-void wxMainFrame::Loaded()
+void wxMainFrame::Load()
 {
+    // TODO: Maybe need to check Load() fail here ?
+    mApp.GetDB().Load();
     mPanelMain->FillControlsData();
     Display(wxMainFrame::Panel::Main);
 }

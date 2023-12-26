@@ -24,4 +24,6 @@ void wxPanelMain::OnBackClicked(wxCommandEvent& event)
 }
 
 void wxPanelMain::OnUpdateClicked(wxCommandEvent& event)
-{}
+{
+    mApp.GetMainFrame().Load();
+}

@@ -15,7 +15,7 @@ public:
     wxMainFrame();
     virtual ~wxMainFrame() = default;
 
-    void Loaded();
+    void Load();
     void Back();
 
 private:

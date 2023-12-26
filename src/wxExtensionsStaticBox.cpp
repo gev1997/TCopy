@@ -13,6 +13,7 @@ wxExtensionsStaticBox::wxExtensionsStaticBox(wxWindow* parent)
 void wxExtensionsStaticBox::FillControlsData(const DB::ExtensionType& extensions)
 {
     mExtensionsListBox->Clear();
+    mExtensionsSearchCtrl->SetValue(wxEmptyString);
     mSelectAll->Set3StateValue(wxCheckBoxState::wxCHK_UNCHECKED);
 
     wxArrayString extensionItems;
