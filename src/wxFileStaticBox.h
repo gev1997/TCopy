@@ -11,6 +11,10 @@ public:
     virtual ~wxFileStaticBox() = default;
 
     void FillControlsData(const DB::FileType& files);
+    wxCheckListBox* getbox() const
+    {
+        return mFileListBox;
+    }
 
 private:
     wxCheckListBox* mFileListBox;

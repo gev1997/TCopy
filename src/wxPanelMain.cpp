@@ -20,7 +20,16 @@ void wxPanelMain::FillControlsData()
 
 void wxPanelMain::OnBackClicked(wxCommandEvent& event)
 {
-    mApp.GetMainFrame().Back();
+    // mApp.GetMainFrame().Back();
+    auto box = mFileStaticBox->getbox();
+    wxArrayInt checkedItems;
+    unsigned int i = box->GetCheckedItems(checkedItems);
+    std::cout << i << std::endl;
+
+    for (auto c : checkedItems)
+    {
+        std::cout << c << std::endl;
+    }
 }
 
 void wxPanelMain::OnUpdateClicked(wxCommandEvent& event)
