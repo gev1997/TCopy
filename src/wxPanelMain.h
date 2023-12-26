@@ -16,9 +16,11 @@ public:
 
 private:
     void OnBackClicked(wxCommandEvent& event);
+    void OnUpdateClicked(wxCommandEvent& event);
 
 private:
     wxFileStaticBox* mFileStaticBox;
     wxExtensionsStaticBox* mExtensionsStaticBox;
     wxButton* mButtonBack;
+    wxButton* mButtonUpdate;
 };
