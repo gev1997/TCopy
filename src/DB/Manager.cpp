@@ -15,12 +15,28 @@ const fs::path& DB::Manager::GetDestinationPath() const
 
 const DB::FileType& DB::Manager::GetFiles() const
 {
-    return mFiles;
+    return mVisibleFiles;
 }
 
 const DB::ExtensionType& DB::Manager::GetExtensions() const
 {
     return mExtensions;
+}
+
+void DB::Manager::Filter(const std::list<std::string>& extensions)
+{
+    if (extensions.empty())
+        return;
+
+    mVisibleFiles.clear();
+
+    for (const auto& extension : extensions)
+    {
+        for (const auto& file : mFiles | std::views::filter([&](const auto& file) { return extension == file.GetExtension(); }))
+        {
+            mVisibleFiles.insert(file);
+        }
+    }
 }
 
 void DB::Manager::SetData(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders)
@@ -57,4 +73,6 @@ void DB::Manager::_Load()
         mFiles.insert(file);
         mExtensions.insert(file.GetExtension());
     }
+
+    mVisibleFiles = mFiles;
 }
