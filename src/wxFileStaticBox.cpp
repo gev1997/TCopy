@@ -11,6 +11,9 @@ void wxFileStaticBox::FillControlsData(const DB::FileType& files)
     mFileListBox->Clear();
     mSelectAll->Set3StateValue(wxCheckBoxState::wxCHK_UNCHECKED);
 
+    if (!files.size())
+        return;
+
     wxArrayString fileItems;
     std::ranges::transform(files, std::back_inserter(fileItems), &DB::File::GetFormatName);
     mFileListBox->InsertItems(fileItems, 0);
