@@ -52,6 +52,7 @@ void DB::Manager::Load()
     assert(!mDestinationPath.empty());
 
     mFiles.clear();
+    mVisibleFiles.clear();
     mExtensions.clear();
 
     if (mSubFolders)
