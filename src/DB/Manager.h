@@ -15,7 +15,7 @@ public:
     const fs::path& GetDestinationPath() const;
     const FileType& GetFiles() const;
     const ExtensionType& GetExtensions() const;
-    void Filter(const std::list<std::string>& extensions);
+    void Filter(const std::string& extension, FilterType filter);
     void SetData(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders);
     void Load();
 

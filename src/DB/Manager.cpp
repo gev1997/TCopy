@@ -23,19 +23,28 @@ const DB::ExtensionType& DB::Manager::GetExtensions() const
     return mExtensions;
 }
 
-void DB::Manager::Filter(const std::list<std::string>& extensions)
+void DB::Manager::Filter(const std::string& extension, FilterType filter)
 {
-    if (extensions.empty())
-        return;
+    const auto isSameExtension = [&](const auto& file) { return file.GetExtension() == extension; };
 
-    mVisibleFiles.clear();
-
-    for (const auto& extension : extensions)
+    switch (filter)
     {
-        for (const auto& file : mFiles | std::views::filter([&](const auto& file) { return extension == file.GetExtension(); }))
-        {
-            mVisibleFiles.insert(file);
-        }
+        case FilterType::Insert:
+            for (const auto& file : mFiles | std::views::filter(isSameExtension))
+                mVisibleFiles.insert(file);
+            break;
+
+        case FilterType::Remove:
+            std::erase_if(mVisibleFiles, isSameExtension);
+            break;
+
+        case FilterType::Reset:
+            mVisibleFiles = mFiles;
+            break;
+
+        case FilterType::Clear:
+            mVisibleFiles.clear();
+            break;
     }
 }
 

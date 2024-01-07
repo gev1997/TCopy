@@ -13,5 +13,12 @@ namespace DB
 
 using FileType = std::multiset<File>;
 using ExtensionType = std::set<std::string>;
+enum class FilterType
+{
+    Insert,
+    Remove,
+    Reset,
+    Clear
+};
 
 }; // namespace DB
