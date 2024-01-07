@@ -2,7 +2,7 @@
 
 #include <wx/statbox.h>
 #include <wx/checklst.h>
-#include <wx/srchctrl.h>
+#include <wx/textctrl.h>
 #include <wx/checkbox.h>
 
 class wxExtensionsStaticBox : public wxStaticBox
@@ -15,6 +15,6 @@ public:
 
 private:
     wxCheckListBox* mExtensionsListBox;
-    wxSearchCtrl* mExtensionsSearchCtrl;
+    wxTextCtrl* mExtensionsSearchCtrl;
     wxCheckBox* mSelectAll;
 };
