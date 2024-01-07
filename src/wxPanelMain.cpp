@@ -10,6 +10,7 @@ wxPanelMain::wxPanelMain(wxFrame* parent)
 {
     mButtonBack->Bind(wxEVT_BUTTON, &wxPanelMain::OnBackClicked, this);
     mButtonUpdate->Bind(wxEVT_BUTTON, &wxPanelMain::OnUpdateClicked, this);
+    Bind(wxEVT_EXTENSION_FILTER, &wxPanelMain::OnExtensionFiltered, this);
 }
 
 void wxPanelMain::FillControlsData()
@@ -26,4 +27,13 @@ void wxPanelMain::OnBackClicked(wxCommandEvent& event)
 void wxPanelMain::OnUpdateClicked(wxCommandEvent& event)
 {
     mApp.GetMainFrame().Load();
+}
+
+void wxPanelMain::OnExtensionFiltered(wxExtensionFilterEvent& event)
+{
+    const std::string extension = event.GetExtension().ToStdString();
+    const DB::FilterType filter = event.GetFilter();
+
+    mApp.GetDB().Filter(extension, filter);
+    mFileStaticBox->FillControlsData(mApp.GetDB().GetFiles());
 }

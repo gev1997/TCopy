@@ -14,6 +14,8 @@ add_executable(FileSync WIN32
     src/DB/File.cpp
     src/FileSyncApp.h
     src/FileSyncApp.cpp
+    src/FileSyncEvent.h
+    src/FileSyncEvent.cpp
     src/wxMainFrame.h
     src/wxMainFrame.cpp
     src/wxPanelBase.h
