@@ -14,6 +14,14 @@ public:
     void FillControlsData(const DB::ExtensionType& extensions);
 
 private:
+    void CheckAll(bool check);
+    void UpdateSelectAllState();
+    void OnExtensionChecked(wxCommandEvent& event);
+    void OnExtensionAllChecked(wxCommandEvent& event);
+    void OnExtensionSearch(wxCommandEvent& event);
+    void OnExtensionSearchEnter(wxCommandEvent& event);
+
+private:
     wxCheckListBox* mExtensionsListBox;
     wxTextCtrl* mExtensionsSearchCtrl;
     wxCheckBox* mSelectAll;
