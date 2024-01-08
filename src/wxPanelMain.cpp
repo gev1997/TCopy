@@ -7,9 +7,11 @@ wxPanelMain::wxPanelMain(wxFrame* parent)
     , mExtensionsStaticBox{new wxExtensionsStaticBox(this)}
     , mButtonBack{new wxButton(this, wxID_ANY, "Back", {10, 5}, {60, 25})}
     , mButtonUpdate{new wxButton(this, wxID_ANY, "Update", {515, 5}, {60, 25})}
+    , mButtonCopy{new wxButton(this, wxID_ANY, "Copy", {420, 410}, {155, 40})}
 {
     mButtonBack->Bind(wxEVT_BUTTON, &wxPanelMain::OnBackClicked, this);
     mButtonUpdate->Bind(wxEVT_BUTTON, &wxPanelMain::OnUpdateClicked, this);
+    mButtonCopy->Bind(wxEVT_BUTTON, &wxPanelMain::OnCopyClicked, this);
     Bind(wxEVT_EXTENSION_FILTER, &wxPanelMain::OnExtensionFiltered, this);
 }
 
@@ -28,6 +30,9 @@ void wxPanelMain::OnUpdateClicked(wxCommandEvent& event)
 {
     mApp.GetMainFrame().Load();
 }
+
+void wxPanelMain::OnCopyClicked(wxCommandEvent& event)
+{}
 
 void wxPanelMain::OnExtensionFiltered(wxExtensionFilterEvent& event)
 {
