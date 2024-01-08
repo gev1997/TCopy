@@ -13,6 +13,12 @@ public:
     void FillControlsData(const DB::FileType& files);
 
 private:
+    void CheckAll(bool check);
+    void UpdateSelectAllState();
+    void OnFileChecked(wxCommandEvent& event);
+    void OnFileAllChecked(wxCommandEvent& event);
+
+private:
     wxCheckListBox* mFileListBox;
     wxCheckBox* mSelectAll;
 };
