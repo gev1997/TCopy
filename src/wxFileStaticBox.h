@@ -11,6 +11,7 @@ public:
     virtual ~wxFileStaticBox() = default;
 
     void FillControlsData(const DB::FileType& files);
+    std::vector<int> GetCheckedItems() const;
 
 private:
     void CheckAll(bool check);

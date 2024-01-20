@@ -22,6 +22,14 @@ void wxFileStaticBox::FillControlsData(const DB::FileType& files)
     mFileListBox->InsertItems(fileItems, 0);
 }
 
+std::vector<int> wxFileStaticBox::GetCheckedItems() const
+{
+    wxArrayInt checkedItems;
+    mFileListBox->GetCheckedItems(checkedItems);
+
+    return {checkedItems.begin(), checkedItems.end()};
+}
+
 void wxFileStaticBox::CheckAll(bool check)
 {
     for (int i = 0; i < mFileListBox->GetCount(); ++i)
