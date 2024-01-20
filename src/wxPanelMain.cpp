@@ -32,7 +32,17 @@ void wxPanelMain::OnUpdateClicked(wxCommandEvent& event)
 }
 
 void wxPanelMain::OnCopyClicked(wxCommandEvent& event)
-{}
+{
+    const std::vector<int> checkedItems = mFileStaticBox->GetCheckedItems();
+
+    if (!checkedItems.size())
+    {
+        // TODO: Error handling here
+        return;
+    }
+
+    mApp.GetDB().CopyFiles(checkedItems);
+}
 
 void wxPanelMain::OnExtensionFiltered(wxExtensionFilterEvent& event)
 {
