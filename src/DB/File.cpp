@@ -12,6 +12,11 @@ DB::File::File(const File& file)
     , mDateTime{wxFileName(mPath.string()).GetModificationTime()}
 {}
 
+fs::path DB::File::GetPath() const
+{
+    return mPath;
+}
+
 std::string DB::File::GetFileName() const
 {
     return mPath.filename().string();

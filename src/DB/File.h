@@ -12,10 +12,10 @@ public:
     File(const File& file);
     ~File() = default;
 
+    fs::path GetPath() const;
     std::string GetFileName() const;
     std::string GetExtension() const;
     std::string GetFormatName() const;
-    // fs::path GetParentPath();
 
     bool operator<(const File& rhs) const;
     bool operator>(const File& rhs) const;
