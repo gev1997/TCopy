@@ -17,6 +17,7 @@ public:
     const ExtensionType& GetExtensions() const;
     void Filter(const std::string& extension, FilterType filter);
     void SetData(const fs::path& sourcePath, const fs::path& destinationPath, bool subFolders);
+    long CopyFiles(const std::vector<int>& checkedItems);
     void Load();
 
 private:

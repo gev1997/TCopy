@@ -1,3 +1,5 @@
+#include <Shlobj.h>
+
 #include "Manager.h"
 
 DB::Manager::Manager()
@@ -53,6 +55,62 @@ void DB::Manager::SetData(const fs::path& sourcePath, const fs::path& destinatio
     mSourcePath = sourcePath;
     mDestinationPath = destinationPath;
     mSubFolders = subFolders;
+}
+
+long DB::Manager::CopyFiles(const std::vector<int>& checkedItems)
+{
+    assert(checkedItems.size());
+
+    IFileOperation* fileOperation = nullptr;
+
+    long result = CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+
+    if (SUCCEEDED(result))
+    {
+        result = CoCreateInstance(CLSID_FileOperation, NULL, CLSCTX_ALL, IID_PPV_ARGS(&fileOperation));
+
+        if (SUCCEEDED(result))
+        {
+            const std::vector<File> visibleFiles(mVisibleFiles.begin(), mVisibleFiles.end());
+
+            for (auto itemIndex : checkedItems)
+            {
+                const fs::path sourceFilePath = visibleFiles[itemIndex].GetPath();
+                const fs::path relativePath = sourceFilePath.string().erase(0, mSourcePath.string().size());
+                fs::path destinationFilePath = mDestinationPath;
+                destinationFilePath += relativePath.parent_path();
+
+                if (!fs::exists(destinationFilePath))
+                    fs::create_directories(destinationFilePath);
+
+                IShellItem* sourceShellItem = nullptr;
+                IShellItem* destinationShellItem = nullptr;
+
+                result = SHCreateItemFromParsingName(sourceFilePath.wstring().c_str(), NULL, IID_PPV_ARGS(&sourceShellItem));
+
+                if (SUCCEEDED(result))
+                   result = SHCreateItemFromParsingName(destinationFilePath.wstring().c_str(), NULL, IID_PPV_ARGS(&destinationShellItem));
+
+                if (SUCCEEDED(result))
+                    result = fileOperation->CopyItem(sourceShellItem, destinationShellItem, nullptr, nullptr);
+
+                if (sourceShellItem)
+                    sourceShellItem->Release();
+
+                if (destinationShellItem)
+                    destinationShellItem->Release();
+            }
+
+            if (SUCCEEDED(result))
+                result = fileOperation->PerformOperations();
+
+            fileOperation->Release();
+        }
+
+        CoUninitialize();
+    }
+
+    return result;
 }
 
 void DB::Manager::Load()
