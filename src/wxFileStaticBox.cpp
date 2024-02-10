@@ -58,9 +58,6 @@ void wxFileStaticBox::UpdateSelectAllState()
 
 void wxFileStaticBox::OnFileChecked(wxCommandEvent& event)
 {
-    unsigned int item = event.GetInt();
-    bool isChecked = mFileListBox->IsChecked(item);
-    
     UpdateSelectAllState();
 }
 
