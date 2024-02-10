@@ -1,3 +1,5 @@
+#include <wx/utils.h>
+
 #include "wxFileStaticBox.h"
 
 wxFileStaticBox::wxFileStaticBox(wxWindow* parent)
@@ -6,6 +8,7 @@ wxFileStaticBox::wxFileStaticBox(wxWindow* parent)
     , mSelectAll{new wxCheckBox(this, wxID_ANY, "Select All", {13, 10}, {90, 20}, wxCHK_3STATE)}
 {
     mFileListBox->Bind(wxEVT_CHECKLISTBOX, &wxFileStaticBox::OnFileChecked, this);
+    mFileListBox->Bind(wxEVT_LISTBOX_DCLICK, &wxFileStaticBox::OnFileDoubleClicked, this);
     mSelectAll->Bind(wxEVT_CHECKBOX, &wxFileStaticBox::OnFileAllChecked, this);
 }
 
@@ -58,6 +61,22 @@ void wxFileStaticBox::OnFileChecked(wxCommandEvent& event)
     unsigned int item = event.GetInt();
     bool isChecked = mFileListBox->IsChecked(item);
     
+    UpdateSelectAllState();
+}
+
+void wxFileStaticBox::OnFileDoubleClicked(wxCommandEvent& event)
+{
+    if (wxGetKeyState(WXK_CONTROL))
+    {
+        for (int i = event.GetInt(); i < mFileListBox->GetCount(); ++i)
+            mFileListBox->Check(i, true);
+    }
+    else
+    {
+        for (int i = event.GetInt(); i >= 0; --i)
+            mFileListBox->Check(i, true);
+    }
+
     UpdateSelectAllState();
 }
 
