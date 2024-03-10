@@ -1,7 +1,8 @@
 #include "FileSyncApp.h"
 
 FileSyncApp::FileSyncApp()
-    : mMainFrame{new wxMainFrame()}
+    : mRegistery{}
+    , mMainFrame{new wxMainFrame()}
     , mCopyDB{}
 {}
 
@@ -12,6 +13,11 @@ bool FileSyncApp::OnInit()
     mMainFrame->Centre();
 
     return true;
+}
+
+FileSyncRegistery& FileSyncApp::GetRegistery()
+{
+    return mRegistery;
 }
 
 wxMainFrame& FileSyncApp::GetMainFrame()

@@ -8,6 +8,11 @@ wxPanelStart::wxPanelStart(wxFrame* parent)
     , mButtonLoad{new wxButton(this, wxID_ANY, "Load", {365, 160}, {130, 40})}
     , mSubFolders{new wxCheckBox(this, wxID_ANY, "Subfolders", {10, 90}, {90, 20})}
 {
+    FileSyncRegistery& registery = mApp.GetRegistery();
+
+    mSourceDirPicker->SetPath(registery.QueryRegisteryValue(FileSyncRegistery::Key::SourceKey));
+    mDestinationDirPicker->SetPath(registery.QueryRegisteryValue(FileSyncRegistery::Key::DestinationKey));
+
     mButtonLoad->Bind(wxEVT_BUTTON, &wxPanelStart::OnLoadClicked, this);
 }
 
@@ -23,5 +28,6 @@ void wxPanelStart::OnLoadClicked(wxCommandEvent& event)
     const std::string destinationPath = mDestinationDirPicker->GetTextCtrlValue().ToStdString();
 
     mApp.GetDB().SetData(sourcePath, destinationPath, mSubFolders->IsChecked());
+    mApp.GetRegistery().WriteRegisteryValue();
     mApp.GetMainFrame().Load();
 }
