@@ -1,5 +1,5 @@
 #include "wxMainFrame.h"
-#include "FileSyncApp.h"
+#include "../FileSyncApp.h"
 
 wxMainFrame::wxMainFrame()
     : wxFrame{nullptr, wxID_ANY, "File Sync"}

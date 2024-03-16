@@ -1,5 +1,5 @@
 #include "wxPanelMain.h"
-#include "FileSyncApp.h"
+#include "../FileSyncApp.h"
 
 wxPanelMain::wxPanelMain(wxFrame* parent)
     : wxPanelBase_{parent, {600, 500}}

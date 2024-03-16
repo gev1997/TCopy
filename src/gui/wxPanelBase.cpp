@@ -1,5 +1,5 @@
 #include "wxPanelBase.h"
-#include "FileSyncApp.h"
+#include "../FileSyncApp.h"
 
 wxPanelBase_::wxPanelBase_(wxFrame* parent, const wxSize& size)
     : wxPanel{parent, wxID_ANY, wxDefaultPosition, size}
