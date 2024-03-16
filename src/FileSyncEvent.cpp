@@ -3,11 +3,11 @@
 wxDEFINE_EVENT(wxEVT_EXTENSION_FILTER, wxExtensionFilterEvent);
 
 wxExtensionFilterEvent::wxExtensionFilterEvent(int id, wxEventType eventType)
-    : wxEvent(id, eventType)
+    : wxEvent{id, eventType}
 {}
  
 wxExtensionFilterEvent::wxExtensionFilterEvent(const wxExtensionFilterEvent& event)
-    : wxEvent(event)
+    : wxEvent{event}
     , mExtension{event.mExtension}
     , mFilter{event.mFilter}
 {}
