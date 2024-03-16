@@ -5,11 +5,13 @@
 
 class FileSyncApp;
 
-class wxPanelBase_ : public wxPanel
+namespace gui { class PanelBase; };
+
+class gui::PanelBase : public wxPanel
 {
 public:
-    wxPanelBase_(wxFrame* parent, const wxSize& size);
-    virtual ~wxPanelBase_() = default;
+    PanelBase(wxFrame* parent, const wxSize& size);
+    virtual ~PanelBase() = default;
 
     void Display(bool show);
 

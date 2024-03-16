@@ -7,11 +7,13 @@
 #include "wxExtensionsStaticBox.h"
 #include "FileSyncEvent.h"
 
-class wxPanelMain : public wxPanelBase_
+namespace gui { class PanelMain; };
+
+class gui::PanelMain : public PanelBase
 {
 public:
-    wxPanelMain(wxFrame* parent);
-    virtual ~wxPanelMain() = default;
+    PanelMain(wxFrame* parent);
+    virtual ~PanelMain() = default;
 
     void FillControlsData();
 

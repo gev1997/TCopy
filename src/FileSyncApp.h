@@ -14,11 +14,11 @@ public:
 
     bool OnInit() override;
     FileSyncRegistery& GetRegistery();
-    wxMainFrame& GetMainFrame();
+    gui::MainFrame& GetMainFrame();
     DB::Manager& GetDB();
 
 private:
     FileSyncRegistery mRegistery;
-    wxMainFrame* mMainFrame;
+    gui::MainFrame* mMainFrame;
     DB::Manager mCopyDB;
 };

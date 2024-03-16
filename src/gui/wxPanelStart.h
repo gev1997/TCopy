@@ -6,11 +6,13 @@
 #include "wxPanelBase.h"
 #include "wxDirPicker.h"
 
-class wxPanelStart : public wxPanelBase_
+namespace gui { class PanelStart; };
+
+class gui::PanelStart : public PanelBase
 {
 public:
-    wxPanelStart(wxFrame* parent);
-    virtual ~wxPanelStart() = default;
+    PanelStart(wxFrame* parent);
+    virtual ~PanelStart() = default;
 
 private:
     void OnLoadClicked(wxCommandEvent& event);

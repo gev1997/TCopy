@@ -1,31 +1,31 @@
 #include "wxMainFrame.h"
 #include "../FileSyncApp.h"
 
-wxMainFrame::wxMainFrame()
+gui::MainFrame::MainFrame()
     : wxFrame{nullptr, wxID_ANY, "File Sync"}
     , mApp{dynamic_cast<FileSyncApp&>(*wxApp::GetInstance())}
-    , mPanelStart{new wxPanelStart(this)}
-    , mPanelMain{new wxPanelMain(this)}
+    , mPanelStart{new PanelStart(this)}
+    , mPanelMain{new PanelMain(this)}
 {
     SetWindowStyle(GetWindowStyle() & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX));
-    Display(wxMainFrame::Panel::Start);
+    Display(MainFrame::Panel::Start);
 }
 
-void wxMainFrame::Display(Panel panel)
+void gui::MainFrame::Display(Panel panel)
 {
     mPanelStart->Display(panel == Panel::Start);
     mPanelMain->Display(panel == Panel::Main);
 }
 
-void wxMainFrame::Load()
+void gui::MainFrame::Load()
 {
     // TODO: Maybe need to check Load() fail here ?
     mApp.GetDB().Load();
     mPanelMain->FillControlsData();
-    Display(wxMainFrame::Panel::Main);
+    Display(MainFrame::Panel::Main);
 }
 
-void wxMainFrame::Back()
+void gui::MainFrame::Back()
 {
-    Display(wxMainFrame::Panel::Start);
+    Display(MainFrame::Panel::Start);
 }

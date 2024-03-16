@@ -1,8 +1,8 @@
 #include "wxPanelStart.h"
 #include "../FileSyncApp.h"
 
-wxPanelStart::wxPanelStart(wxFrame* parent)
-    : wxPanelBase_{parent, {520, 250}}
+gui::PanelStart::PanelStart(wxFrame* parent)
+    : PanelBase{parent, {520, 250}}
     , mSourceDirPicker{new wxDirPicker(this, "Source", {10, 10}, {485, 30})}
     , mDestinationDirPicker{new wxDirPicker(this, "Destination", {10, 50}, {485, 30})}
     , mButtonLoad{new wxButton(this, wxID_ANY, "Load", {365, 160}, {130, 40})}
@@ -13,10 +13,10 @@ wxPanelStart::wxPanelStart(wxFrame* parent)
     mSourceDirPicker->SetPath(registery.QueryRegisteryValue(FileSyncRegistery::Key::SourceKey));
     mDestinationDirPicker->SetPath(registery.QueryRegisteryValue(FileSyncRegistery::Key::DestinationKey));
 
-    mButtonLoad->Bind(wxEVT_BUTTON, &wxPanelStart::OnLoadClicked, this);
+    mButtonLoad->Bind(wxEVT_BUTTON, &PanelStart::OnLoadClicked, this);
 }
 
-void wxPanelStart::OnLoadClicked(wxCommandEvent& event)
+void gui::PanelStart::OnLoadClicked(wxCommandEvent& event)
 {
     if (!mSourceDirPicker->IsDirectory() || !mDestinationDirPicker->IsDirectory())
     {
