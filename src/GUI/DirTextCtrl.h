@@ -2,9 +2,9 @@
 
 #include <wx/textctrl.h>
 
-namespace gui { class DirTextCtrl; };
+namespace GUI { class DirTextCtrl; };
 
-class gui::DirTextCtrl : public wxTextCtrl
+class GUI::DirTextCtrl : public wxTextCtrl
 {
 public:
     DirTextCtrl(wxWindow* parent, const wxPoint& pos, const wxSize& size);

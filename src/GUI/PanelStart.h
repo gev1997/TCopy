@@ -6,9 +6,9 @@
 #include "PanelBase.h"
 #include "DirPicker.h"
 
-namespace gui { class PanelStart; };
+namespace GUI { class PanelStart; };
 
-class gui::PanelStart : public PanelBase
+class GUI::PanelStart : public PanelBase
 {
 public:
     PanelStart(wxFrame* parent);

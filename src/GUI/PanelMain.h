@@ -7,9 +7,9 @@
 #include "ExtensionsStaticBox.h"
 #include "ExtensionFilterEvent.h"
 
-namespace gui { class PanelMain; };
+namespace GUI { class PanelMain; };
 
-class gui::PanelMain : public PanelBase
+class GUI::PanelMain : public PanelBase
 {
 public:
     PanelMain(wxFrame* parent);

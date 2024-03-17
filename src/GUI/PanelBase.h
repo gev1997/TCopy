@@ -5,9 +5,9 @@
 
 class FileSyncApp;
 
-namespace gui { class PanelBase; };
+namespace GUI { class PanelBase; };
 
-class gui::PanelBase : public wxPanel
+class GUI::PanelBase : public wxPanel
 {
 public:
     PanelBase(wxFrame* parent, const wxSize& size);

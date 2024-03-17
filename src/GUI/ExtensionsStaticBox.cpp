@@ -1,7 +1,7 @@
 #include "ExtensionsStaticBox.h"
 #include "ExtensionFilterEvent.h"
 
-gui::ExtensionsStaticBox::ExtensionsStaticBox(wxWindow* parent)
+GUI::ExtensionsStaticBox::ExtensionsStaticBox(wxWindow* parent)
     : wxStaticBox{parent, wxID_ANY, wxEmptyString, {420, 30}, {155, 230}}
     , mExtensionsListBox{new wxCheckListBox(this, wxID_ANY, {10, 55}, {135, 165})}
     , mExtensionsSearchCtrl{new wxTextCtrl(this, wxID_ANY, wxEmptyString, {10, 30}, {135, 20}, wxTE_PROCESS_ENTER)}
@@ -15,7 +15,7 @@ gui::ExtensionsStaticBox::ExtensionsStaticBox(wxWindow* parent)
     mSelectAll->Bind(wxEVT_CHECKBOX, &ExtensionsStaticBox::OnExtensionAllChecked, this);
 }
 
-void gui::ExtensionsStaticBox::FillControlsData(const DB::ExtensionType& extensions)
+void GUI::ExtensionsStaticBox::FillControlsData(const DB::ExtensionType& extensions)
 {
     mExtensionsListBox->Clear();
     mExtensionsSearchCtrl->ChangeValue(wxEmptyString);
@@ -27,13 +27,13 @@ void gui::ExtensionsStaticBox::FillControlsData(const DB::ExtensionType& extensi
     CheckAll(true);
 }
 
-void gui::ExtensionsStaticBox::CheckAll(bool check)
+void GUI::ExtensionsStaticBox::CheckAll(bool check)
 {
     for (int i = 0; i < mExtensionsListBox->GetCount(); ++i)
         mExtensionsListBox->Check(i, check);
 }
 
-void gui::ExtensionsStaticBox::UpdateSelectAllState()
+void GUI::ExtensionsStaticBox::UpdateSelectAllState()
 {
     wxArrayInt checkedItems;
     mExtensionsListBox->GetCheckedItems(checkedItems);
@@ -50,7 +50,7 @@ void gui::ExtensionsStaticBox::UpdateSelectAllState()
     mSelectAll->Set3StateValue(state);
 }
 
-void gui::ExtensionsStaticBox::OnExtensionChecked(wxCommandEvent& event)
+void GUI::ExtensionsStaticBox::OnExtensionChecked(wxCommandEvent& event)
 {
     unsigned int item = event.GetInt();
     bool isChecked = mExtensionsListBox->IsChecked(item);
@@ -63,7 +63,7 @@ void gui::ExtensionsStaticBox::OnExtensionChecked(wxCommandEvent& event)
     UpdateSelectAllState();
 }
 
-void gui::ExtensionsStaticBox::OnExtensionAllChecked(wxCommandEvent& event)
+void GUI::ExtensionsStaticBox::OnExtensionAllChecked(wxCommandEvent& event)
 {
     bool isChecked = event.IsChecked();
     CheckAll(isChecked);
@@ -73,7 +73,7 @@ void gui::ExtensionsStaticBox::OnExtensionAllChecked(wxCommandEvent& event)
     GetParent()->GetEventHandler()->ProcessEvent(newEvent);
 }
 
-void gui::ExtensionsStaticBox::OnExtensionSearch(wxCommandEvent& event)
+void GUI::ExtensionsStaticBox::OnExtensionSearch(wxCommandEvent& event)
 {
     wxString searchText = event.GetString();
     
@@ -97,7 +97,7 @@ void gui::ExtensionsStaticBox::OnExtensionSearch(wxCommandEvent& event)
     mExtensionsListBox->SetSelection(item);
 }
 
-void gui::ExtensionsStaticBox::OnExtensionSearchEnter(wxCommandEvent& event)
+void GUI::ExtensionsStaticBox::OnExtensionSearchEnter(wxCommandEvent& event)
 {
     int item = mExtensionsListBox->GetSelection();
 

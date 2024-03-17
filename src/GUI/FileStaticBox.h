@@ -4,9 +4,9 @@
 #include <wx/checklst.h>
 #include <wx/checkbox.h>
 
-namespace gui { class FileStaticBox; };
+namespace GUI { class FileStaticBox; };
 
-class gui::FileStaticBox : public wxStaticBox
+class GUI::FileStaticBox : public wxStaticBox
 {
 public:
     FileStaticBox(wxWindow* parent);

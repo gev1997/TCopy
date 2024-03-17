@@ -2,7 +2,7 @@
 
 FileSyncApp::FileSyncApp()
     : mRegistery{}
-    , mMainFrame{new gui::MainFrame()}
+    , mMainFrame{new GUI::MainFrame()}
     , mCopyDB{}
 {}
 
@@ -20,7 +20,7 @@ FileSyncRegistery& FileSyncApp::GetRegistery()
     return mRegistery;
 }
 
-gui::MainFrame& FileSyncApp::GetMainFrame()
+GUI::MainFrame& FileSyncApp::GetMainFrame()
 {
     return *mMainFrame;
 }
