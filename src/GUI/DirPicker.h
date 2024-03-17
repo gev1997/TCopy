@@ -4,9 +4,9 @@
 
 #include "DirTextCtrl.h"
 
-namespace gui { class DirPicker; };
+namespace GUI { class DirPicker; };
 
-class gui::DirPicker : public wxDirPickerCtrl
+class GUI::DirPicker : public wxDirPickerCtrl
 {
 public:
     DirPicker(wxWindow* parent, const wxString& label, const wxPoint& pos, const wxSize& size);

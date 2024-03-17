@@ -5,9 +5,9 @@
 #include <wx/textctrl.h>
 #include <wx/checkbox.h>
 
-namespace gui { class ExtensionsStaticBox; };
+namespace GUI { class ExtensionsStaticBox; };
 
-class gui::ExtensionsStaticBox : public wxStaticBox
+class GUI::ExtensionsStaticBox : public wxStaticBox
 {
 public:
     ExtensionsStaticBox(wxWindow* parent);

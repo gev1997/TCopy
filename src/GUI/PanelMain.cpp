@@ -1,7 +1,7 @@
 #include "PanelMain.h"
 #include "../FileSyncApp.h"
 
-gui::PanelMain::PanelMain(wxFrame* parent)
+GUI::PanelMain::PanelMain(wxFrame* parent)
     : PanelBase{parent, {600, 500}}
     , mFileStaticBox{new FileStaticBox(this)}
     , mExtensionsStaticBox{new ExtensionsStaticBox(this)}
@@ -15,23 +15,23 @@ gui::PanelMain::PanelMain(wxFrame* parent)
     Bind(wxEVT_EXTENSION_FILTER, &PanelMain::OnExtensionFiltered, this);
 }
 
-void gui::PanelMain::FillControlsData()
+void GUI::PanelMain::FillControlsData()
 {
     mFileStaticBox->FillControlsData(mApp.GetDB().GetFiles());
     mExtensionsStaticBox->FillControlsData(mApp.GetDB().GetExtensions());
 }
 
-void gui::PanelMain::OnBackClicked(wxCommandEvent& event)
+void GUI::PanelMain::OnBackClicked(wxCommandEvent& event)
 {
     mApp.GetMainFrame().Back();
 }
 
-void gui::PanelMain::OnUpdateClicked(wxCommandEvent& event)
+void GUI::PanelMain::OnUpdateClicked(wxCommandEvent& event)
 {
     mApp.GetMainFrame().Load();
 }
 
-void gui::PanelMain::OnCopyClicked(wxCommandEvent& event)
+void GUI::PanelMain::OnCopyClicked(wxCommandEvent& event)
 {
     const std::vector<int> checkedItems = mFileStaticBox->GetCheckedItems();
 
@@ -44,7 +44,7 @@ void gui::PanelMain::OnCopyClicked(wxCommandEvent& event)
     mApp.GetDB().CopyFiles(checkedItems);
 }
 
-void gui::PanelMain::OnExtensionFiltered(ExtensionFilterEvent& event)
+void GUI::PanelMain::OnExtensionFiltered(ExtensionFilterEvent& event)
 {
     const std::string extension = event.GetExtension().ToStdString();
     const DB::FilterType filter = event.GetFilter();

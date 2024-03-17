@@ -1,7 +1,7 @@
 #include "PanelStart.h"
 #include "../FileSyncApp.h"
 
-gui::PanelStart::PanelStart(wxFrame* parent)
+GUI::PanelStart::PanelStart(wxFrame* parent)
     : PanelBase{parent, {520, 250}}
     , mSourceDirPicker{new DirPicker(this, "Source", {10, 10}, {485, 30})}
     , mDestinationDirPicker{new DirPicker(this, "Destination", {10, 50}, {485, 30})}
@@ -16,7 +16,7 @@ gui::PanelStart::PanelStart(wxFrame* parent)
     mButtonLoad->Bind(wxEVT_BUTTON, &PanelStart::OnLoadClicked, this);
 }
 
-void gui::PanelStart::OnLoadClicked(wxCommandEvent& event)
+void GUI::PanelStart::OnLoadClicked(wxCommandEvent& event)
 {
     if (!mSourceDirPicker->IsDirectory() || !mDestinationDirPicker->IsDirectory())
     {

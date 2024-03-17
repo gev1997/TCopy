@@ -1,12 +1,12 @@
 #include "PanelBase.h"
 #include "../FileSyncApp.h"
 
-gui::PanelBase::PanelBase(wxFrame* parent, const wxSize& size)
+GUI::PanelBase::PanelBase(wxFrame* parent, const wxSize& size)
     : wxPanel{parent, wxID_ANY, wxDefaultPosition, size}
     , mApp{dynamic_cast<FileSyncApp&>(*wxApp::GetInstance())}
 {}
 
-void gui::PanelBase::Display(bool show)
+void GUI::PanelBase::Display(bool show)
 {
     if (show)
     {

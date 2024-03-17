@@ -3,11 +3,11 @@
 #include <wx/event.h>
 #include <wx/string.h>
 
-namespace gui { class ExtensionFilterEvent; };
+namespace GUI { class ExtensionFilterEvent; };
 
-wxDECLARE_EVENT(wxEVT_EXTENSION_FILTER, gui::ExtensionFilterEvent);
+wxDECLARE_EVENT(wxEVT_EXTENSION_FILTER, GUI::ExtensionFilterEvent);
 
-class gui::ExtensionFilterEvent : public wxEvent
+class GUI::ExtensionFilterEvent : public wxEvent
 {
 public:
     ExtensionFilterEvent(int id = 0, wxEventType eventType = wxEVT_EXTENSION_FILTER);

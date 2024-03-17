@@ -1,6 +1,6 @@
 #include "DirPicker.h"
 
-gui::DirPicker::DirPicker(wxWindow* parent, const wxString& label, const wxPoint& pos, const wxSize& size)
+GUI::DirPicker::DirPicker(wxWindow* parent, const wxString& label, const wxPoint& pos, const wxSize& size)
     : wxDirPickerCtrl{parent, wxID_ANY, wxEmptyString, wxDirSelectorPromptStr, pos, size}
     , mTextCtrl{new DirTextCtrl(this, {0, 3}, {405, 23})}
 {
@@ -10,7 +10,7 @@ gui::DirPicker::DirPicker(wxWindow* parent, const wxString& label, const wxPoint
     m_text = mTextCtrl;
 }
 
-bool gui::DirPicker::IsDirectory() const
+bool GUI::DirPicker::IsDirectory() const
 {
     return mTextCtrl->IsDirectory();
 }

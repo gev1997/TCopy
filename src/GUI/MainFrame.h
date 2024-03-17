@@ -7,9 +7,9 @@
 
 class FileSyncApp;
 
-namespace gui { class MainFrame; };
+namespace GUI { class MainFrame; };
 
-class gui::MainFrame : public wxFrame
+class GUI::MainFrame : public wxFrame
 {
 public:
     enum class Panel { Start, Main };

@@ -1,7 +1,7 @@
 #include "MainFrame.h"
 #include "../FileSyncApp.h"
 
-gui::MainFrame::MainFrame()
+GUI::MainFrame::MainFrame()
     : wxFrame{nullptr, wxID_ANY, "File Sync"}
     , mApp{dynamic_cast<FileSyncApp&>(*wxApp::GetInstance())}
     , mPanelStart{new PanelStart(this)}
@@ -11,13 +11,13 @@ gui::MainFrame::MainFrame()
     Display(MainFrame::Panel::Start);
 }
 
-void gui::MainFrame::Display(Panel panel)
+void GUI::MainFrame::Display(Panel panel)
 {
     mPanelStart->Display(panel == Panel::Start);
     mPanelMain->Display(panel == Panel::Main);
 }
 
-void gui::MainFrame::Load()
+void GUI::MainFrame::Load()
 {
     // TODO: Maybe need to check Load() fail here ?
     mApp.GetDB().Load();
@@ -25,7 +25,7 @@ void gui::MainFrame::Load()
     Display(MainFrame::Panel::Main);
 }
 
-void gui::MainFrame::Back()
+void GUI::MainFrame::Back()
 {
     Display(MainFrame::Panel::Start);
 }
