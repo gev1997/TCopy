@@ -5,7 +5,7 @@
 #include "wxPanelBase.h"
 #include "wxFileStaticBox.h"
 #include "wxExtensionsStaticBox.h"
-#include "FileSyncEvent.h"
+#include "ExtensionFilterEvent.h"
 
 namespace gui { class PanelMain; };
 

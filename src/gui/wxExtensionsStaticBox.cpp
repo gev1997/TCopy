@@ -1,5 +1,5 @@
 #include "wxExtensionsStaticBox.h"
-#include "FileSyncEvent.h"
+#include "ExtensionFilterEvent.h"
 
 gui::ExtensionsStaticBox::ExtensionsStaticBox(wxWindow* parent)
     : wxStaticBox{parent, wxID_ANY, wxEmptyString, {420, 30}, {155, 230}}

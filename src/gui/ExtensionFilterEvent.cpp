@@ -1,4 +1,4 @@
-#include "FileSyncEvent.h"
+#include "ExtensionFilterEvent.h"
 
 wxDEFINE_EVENT(wxEVT_EXTENSION_FILTER, gui::ExtensionFilterEvent);
 
