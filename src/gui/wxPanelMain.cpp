@@ -3,8 +3,8 @@
 
 gui::PanelMain::PanelMain(wxFrame* parent)
     : PanelBase{parent, {600, 500}}
-    , mFileStaticBox{new wxFileStaticBox(this)}
-    , mExtensionsStaticBox{new wxExtensionsStaticBox(this)}
+    , mFileStaticBox{new FileStaticBox(this)}
+    , mExtensionsStaticBox{new ExtensionsStaticBox(this)}
     , mButtonBack{new wxButton(this, wxID_ANY, "Back", {10, 5}, {60, 25})}
     , mButtonUpdate{new wxButton(this, wxID_ANY, "Update", {515, 5}, {60, 25})}
     , mButtonCopy{new wxButton(this, wxID_ANY, "Copy", {420, 410}, {155, 40})}
@@ -44,7 +44,7 @@ void gui::PanelMain::OnCopyClicked(wxCommandEvent& event)
     mApp.GetDB().CopyFiles(checkedItems);
 }
 
-void gui::PanelMain::OnExtensionFiltered(wxExtensionFilterEvent& event)
+void gui::PanelMain::OnExtensionFiltered(ExtensionFilterEvent& event)
 {
     const std::string extension = event.GetExtension().ToStdString();
     const DB::FilterType filter = event.GetFilter();

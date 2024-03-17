@@ -3,8 +3,8 @@
 
 gui::PanelStart::PanelStart(wxFrame* parent)
     : PanelBase{parent, {520, 250}}
-    , mSourceDirPicker{new wxDirPicker(this, "Source", {10, 10}, {485, 30})}
-    , mDestinationDirPicker{new wxDirPicker(this, "Destination", {10, 50}, {485, 30})}
+    , mSourceDirPicker{new DirPicker(this, "Source", {10, 10}, {485, 30})}
+    , mDestinationDirPicker{new DirPicker(this, "Destination", {10, 50}, {485, 30})}
     , mButtonLoad{new wxButton(this, wxID_ANY, "Load", {365, 160}, {130, 40})}
     , mSubFolders{new wxCheckBox(this, wxID_ANY, "Subfolders", {10, 90}, {90, 20})}
 {

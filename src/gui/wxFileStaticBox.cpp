@@ -2,17 +2,17 @@
 
 #include "wxFileStaticBox.h"
 
-wxFileStaticBox::wxFileStaticBox(wxWindow* parent)
+gui::FileStaticBox::FileStaticBox(wxWindow* parent)
     : wxStaticBox{parent, wxID_ANY, wxEmptyString, {10, 30}, {400, 420}}
     , mFileListBox{new wxCheckListBox(this, wxID_ANY, {10, 30}, {380, 380})}
     , mSelectAll{new wxCheckBox(this, wxID_ANY, "Select All", {13, 10}, {90, 20}, wxCHK_3STATE)}
 {
-    mFileListBox->Bind(wxEVT_CHECKLISTBOX, &wxFileStaticBox::OnFileChecked, this);
-    mFileListBox->Bind(wxEVT_LISTBOX_DCLICK, &wxFileStaticBox::OnFileDoubleClicked, this);
-    mSelectAll->Bind(wxEVT_CHECKBOX, &wxFileStaticBox::OnFileAllChecked, this);
+    mFileListBox->Bind(wxEVT_CHECKLISTBOX, &FileStaticBox::OnFileChecked, this);
+    mFileListBox->Bind(wxEVT_LISTBOX_DCLICK, &FileStaticBox::OnFileDoubleClicked, this);
+    mSelectAll->Bind(wxEVT_CHECKBOX, &FileStaticBox::OnFileAllChecked, this);
 }
 
-void wxFileStaticBox::FillControlsData(const DB::FileType& files)
+void gui::FileStaticBox::FillControlsData(const DB::FileType& files)
 {
     mFileListBox->Clear();
     mSelectAll->Set3StateValue(wxCheckBoxState::wxCHK_UNCHECKED);
@@ -25,7 +25,7 @@ void wxFileStaticBox::FillControlsData(const DB::FileType& files)
     mFileListBox->InsertItems(fileItems, 0);
 }
 
-std::vector<int> wxFileStaticBox::GetCheckedItems() const
+std::vector<int> gui::FileStaticBox::GetCheckedItems() const
 {
     wxArrayInt checkedItems;
     mFileListBox->GetCheckedItems(checkedItems);
@@ -33,13 +33,13 @@ std::vector<int> wxFileStaticBox::GetCheckedItems() const
     return {checkedItems.begin(), checkedItems.end()};
 }
 
-void wxFileStaticBox::CheckAll(bool check)
+void gui::FileStaticBox::CheckAll(bool check)
 {
     for (int i = 0; i < mFileListBox->GetCount(); ++i)
         mFileListBox->Check(i, check);
 }
 
-void wxFileStaticBox::UpdateSelectAllState()
+void gui::FileStaticBox::UpdateSelectAllState()
 {
     wxArrayInt checkedItems;
     mFileListBox->GetCheckedItems(checkedItems);
@@ -56,12 +56,12 @@ void wxFileStaticBox::UpdateSelectAllState()
     mSelectAll->Set3StateValue(state);
 }
 
-void wxFileStaticBox::OnFileChecked(wxCommandEvent& event)
+void gui::FileStaticBox::OnFileChecked(wxCommandEvent& event)
 {
     UpdateSelectAllState();
 }
 
-void wxFileStaticBox::OnFileDoubleClicked(wxCommandEvent& event)
+void gui::FileStaticBox::OnFileDoubleClicked(wxCommandEvent& event)
 {
     if (wxGetKeyState(WXK_CONTROL))
     {
@@ -77,7 +77,7 @@ void wxFileStaticBox::OnFileDoubleClicked(wxCommandEvent& event)
     UpdateSelectAllState();
 }
 
-void wxFileStaticBox::OnFileAllChecked(wxCommandEvent& event)
+void gui::FileStaticBox::OnFileAllChecked(wxCommandEvent& event)
 {
     bool isChecked = event.IsChecked();
     CheckAll(isChecked);

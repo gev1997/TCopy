@@ -18,8 +18,8 @@ private:
     void OnLoadClicked(wxCommandEvent& event);
 
 private:
-    wxDirPicker* mSourceDirPicker;
-    wxDirPicker* mDestinationDirPicker;
+    DirPicker* mSourceDirPicker;
+    DirPicker* mDestinationDirPicker;
     wxButton* mButtonLoad;
     wxCheckBox* mSubFolders;
 };

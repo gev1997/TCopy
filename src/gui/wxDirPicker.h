@@ -4,14 +4,16 @@
 
 #include "wxDirTextCtrl.h"
 
-class wxDirPicker : public wxDirPickerCtrl
+namespace gui { class DirPicker; };
+
+class gui::DirPicker : public wxDirPickerCtrl
 {
 public:
-    wxDirPicker(wxWindow* parent, const wxString& label, const wxPoint& pos, const wxSize& size);
-    virtual ~wxDirPicker() = default;
+    DirPicker(wxWindow* parent, const wxString& label, const wxPoint& pos, const wxSize& size);
+    virtual ~DirPicker() = default;
 
     bool IsDirectory() const;
 
 private:
-    wxDirTextCtrl* mTextCtrl;
+    DirTextCtrl* mTextCtrl;
 };

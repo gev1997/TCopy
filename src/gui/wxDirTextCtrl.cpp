@@ -1,28 +1,28 @@
 #include "wxDirTextCtrl.h"
 
-wxDirTextCtrl::wxDirTextCtrl(wxWindow* parent, const wxPoint& pos, const wxSize& size)
+gui::DirTextCtrl::DirTextCtrl(wxWindow* parent, const wxPoint& pos, const wxSize& size)
     : wxTextCtrl{parent, wxID_ANY, wxEmptyString, pos, size}
 {
-    Bind(wxEVT_TEXT, &wxDirTextCtrl::OnTextChanged, this);
+    Bind(wxEVT_TEXT, &DirTextCtrl::OnTextChanged, this);
 }
 
-bool wxDirTextCtrl::IsDirectory() const
+bool gui::DirTextCtrl::IsDirectory() const
 {
     return fs::is_directory(GetValue().ToStdString());
 }
 
-void wxDirTextCtrl::ValidatePath()
+void gui::DirTextCtrl::ValidatePath()
 {
     SetForegroundColour(IsDirectory() ? *wxBLACK : *wxRED);
     Refresh();
 }
 
-void wxDirTextCtrl::ChangeValue(const wxString& value)
+void gui::DirTextCtrl::ChangeValue(const wxString& value)
 {
     SetValue(value);
 }
 
-void wxDirTextCtrl::OnTextChanged(wxCommandEvent& event)
+void gui::DirTextCtrl::OnTextChanged(wxCommandEvent& event)
 {
     ValidatePath();
 }

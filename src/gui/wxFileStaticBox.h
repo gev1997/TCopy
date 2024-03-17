@@ -4,11 +4,13 @@
 #include <wx/checklst.h>
 #include <wx/checkbox.h>
 
-class wxFileStaticBox : public wxStaticBox
+namespace gui { class FileStaticBox; };
+
+class gui::FileStaticBox : public wxStaticBox
 {
 public:
-    wxFileStaticBox(wxWindow* parent);
-    virtual ~wxFileStaticBox() = default;
+    FileStaticBox(wxWindow* parent);
+    virtual ~FileStaticBox() = default;
 
     void FillControlsData(const DB::FileType& files);
     std::vector<int> GetCheckedItems() const;

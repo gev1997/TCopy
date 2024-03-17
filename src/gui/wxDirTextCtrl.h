@@ -2,11 +2,13 @@
 
 #include <wx/textctrl.h>
 
-class wxDirTextCtrl : public wxTextCtrl
+namespace gui { class DirTextCtrl; };
+
+class gui::DirTextCtrl : public wxTextCtrl
 {
 public:
-    wxDirTextCtrl(wxWindow* parent, const wxPoint& pos, const wxSize& size);
-    virtual ~wxDirTextCtrl() = default;
+    DirTextCtrl(wxWindow* parent, const wxPoint& pos, const wxSize& size);
+    virtual ~DirTextCtrl() = default;
 
     bool IsDirectory() const;
 

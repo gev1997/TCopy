@@ -20,12 +20,12 @@ public:
 private:
     void OnBackClicked(wxCommandEvent& event);
     void OnUpdateClicked(wxCommandEvent& event);
-    void OnExtensionFiltered(wxExtensionFilterEvent& event);
+    void OnExtensionFiltered(ExtensionFilterEvent& event);
     void OnCopyClicked(wxCommandEvent& event);
 
 private:
-    wxFileStaticBox* mFileStaticBox;
-    wxExtensionsStaticBox* mExtensionsStaticBox;
+    FileStaticBox* mFileStaticBox;
+    ExtensionsStaticBox* mExtensionsStaticBox;
     wxButton* mButtonBack;
     wxButton* mButtonUpdate;
     wxButton* mButtonCopy;

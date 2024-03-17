@@ -1,38 +1,38 @@
 #include "FileSyncEvent.h"
 
-wxDEFINE_EVENT(wxEVT_EXTENSION_FILTER, wxExtensionFilterEvent);
+wxDEFINE_EVENT(wxEVT_EXTENSION_FILTER, gui::ExtensionFilterEvent);
 
-wxExtensionFilterEvent::wxExtensionFilterEvent(int id, wxEventType eventType)
+gui::ExtensionFilterEvent::ExtensionFilterEvent(int id, wxEventType eventType)
     : wxEvent{id, eventType}
 {}
  
-wxExtensionFilterEvent::wxExtensionFilterEvent(const wxExtensionFilterEvent& event)
+gui::ExtensionFilterEvent::ExtensionFilterEvent(const ExtensionFilterEvent& event)
     : wxEvent{event}
     , mExtension{event.mExtension}
     , mFilter{event.mFilter}
 {}
 
-wxEvent* wxExtensionFilterEvent::Clone() const
+wxEvent* gui::ExtensionFilterEvent::Clone() const
 {
-    return new wxExtensionFilterEvent(*this);
+    return new ExtensionFilterEvent(*this);
 }
 
-void wxExtensionFilterEvent::SetExtension(const wxString& extension)
+void gui::ExtensionFilterEvent::SetExtension(const wxString& extension)
 {
     mExtension = extension;
 }
 
-void wxExtensionFilterEvent::SetFilter(const DB::FilterType& filter)
+void gui::ExtensionFilterEvent::SetFilter(const DB::FilterType& filter)
 {
     mFilter = filter;
 }
 
-wxString wxExtensionFilterEvent::GetExtension() const
+wxString gui::ExtensionFilterEvent::GetExtension() const
 {
     return mExtension;
 }
 
-DB::FilterType wxExtensionFilterEvent::GetFilter() const
+DB::FilterType gui::ExtensionFilterEvent::GetFilter() const
 {
     return mFilter;
 }
