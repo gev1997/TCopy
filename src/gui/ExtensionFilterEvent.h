@@ -3,14 +3,15 @@
 #include <wx/event.h>
 #include <wx/string.h>
 
-class wxExtensionFilterEvent;
-wxDECLARE_EVENT(wxEVT_EXTENSION_FILTER, wxExtensionFilterEvent);
+namespace gui { class ExtensionFilterEvent; };
 
-class wxExtensionFilterEvent : public wxEvent
+wxDECLARE_EVENT(wxEVT_EXTENSION_FILTER, gui::ExtensionFilterEvent);
+
+class gui::ExtensionFilterEvent : public wxEvent
 {
 public:
-    wxExtensionFilterEvent(int id = 0, wxEventType eventType = wxEVT_EXTENSION_FILTER);
-	wxExtensionFilterEvent(const wxExtensionFilterEvent& event);
+    ExtensionFilterEvent(int id = 0, wxEventType eventType = wxEVT_EXTENSION_FILTER);
+	ExtensionFilterEvent(const ExtensionFilterEvent& event);
 
 	wxEvent* Clone() const override;
 	void SetExtension(const wxString& extension);

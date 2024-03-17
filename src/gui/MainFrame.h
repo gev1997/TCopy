@@ -2,18 +2,20 @@
 
 #include <wx/frame.h>
 
-#include "wxPanelStart.h"
-#include "wxPanelMain.h"
+#include "PanelStart.h"
+#include "PanelMain.h"
 
 class FileSyncApp;
 
-class wxMainFrame : public wxFrame
+namespace gui { class MainFrame; };
+
+class gui::MainFrame : public wxFrame
 {
 public:
     enum class Panel { Start, Main };
 
-    wxMainFrame();
-    virtual ~wxMainFrame() = default;
+    MainFrame();
+    virtual ~MainFrame() = default;
 
     void Load();
     void Back();
@@ -23,6 +25,6 @@ private:
 
 private:
     FileSyncApp& mApp;
-    wxPanelStart* mPanelStart;
-    wxPanelMain* mPanelMain;
+    PanelStart* mPanelStart;
+    PanelMain* mPanelMain;
 };

@@ -5,11 +5,13 @@
 #include <wx/textctrl.h>
 #include <wx/checkbox.h>
 
-class wxExtensionsStaticBox : public wxStaticBox
+namespace gui { class ExtensionsStaticBox; };
+
+class gui::ExtensionsStaticBox : public wxStaticBox
 {
 public:
-    wxExtensionsStaticBox(wxWindow* parent);
-    virtual ~wxExtensionsStaticBox() = default;
+    ExtensionsStaticBox(wxWindow* parent);
+    virtual ~ExtensionsStaticBox() = default;
 
     void FillControlsData(const DB::ExtensionType& extensions);
 

@@ -2,7 +2,7 @@
 
 #include <wx/app.h>
 
-#include "wxMainFrame.h"
+#include "gui/MainFrame.h"
 #include "DB/Manager.h"
 #include "FileSyncRegistery.h"
 
@@ -14,11 +14,11 @@ public:
 
     bool OnInit() override;
     FileSyncRegistery& GetRegistery();
-    wxMainFrame& GetMainFrame();
+    gui::MainFrame& GetMainFrame();
     DB::Manager& GetDB();
 
 private:
     FileSyncRegistery mRegistery;
-    wxMainFrame* mMainFrame;
+    gui::MainFrame* mMainFrame;
     DB::Manager mCopyDB;
 };
