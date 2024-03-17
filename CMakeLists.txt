@@ -16,24 +16,24 @@ add_executable(FileSync WIN32
     src/DB/Manager.cpp
     src/DB/File.h
     src/DB/File.cpp
-    src/gui/ExtensionFilterEvent.h
-    src/gui/ExtensionFilterEvent.cpp
-    src/gui/MainFrame.h
-    src/gui/MainFrame.cpp
-    src/gui/PanelBase.h
-    src/gui/PanelBase.cpp
-    src/gui/PanelStart.h
-    src/gui/PanelStart.cpp
-    src/gui/PanelMain.h
-    src/gui/PanelMain.cpp
-    src/gui/DirPicker.h
-    src/gui/DirPicker.cpp
-    src/gui/DirTextCtrl.h
-    src/gui/DirTextCtrl.cpp
-    src/gui/FileStaticBox.h
-    src/gui/FileStaticBox.cpp
-    src/gui/ExtensionsStaticBox.h
-    src/gui/ExtensionsStaticBox.cpp
+    src/GUI/ExtensionFilterEvent.h
+    src/GUI/ExtensionFilterEvent.cpp
+    src/GUI/MainFrame.h
+    src/GUI/MainFrame.cpp
+    src/GUI/PanelBase.h
+    src/GUI/PanelBase.cpp
+    src/GUI/PanelStart.h
+    src/GUI/PanelStart.cpp
+    src/GUI/PanelMain.h
+    src/GUI/PanelMain.cpp
+    src/GUI/DirPicker.h
+    src/GUI/DirPicker.cpp
+    src/GUI/DirTextCtrl.h
+    src/GUI/DirTextCtrl.cpp
+    src/GUI/FileStaticBox.h
+    src/GUI/FileStaticBox.cpp
+    src/GUI/ExtensionsStaticBox.h
+    src/GUI/ExtensionsStaticBox.cpp
 )
 
 target_precompile_headers(FileSync PRIVATE src/FileSync_precomp.h)
