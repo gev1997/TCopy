@@ -2,10 +2,9 @@
 
 #include <wx/datetime.h>
 
-namespace DB
-{
+namespace DB { class File; };
 
-class File
+class DB::File
 {
 public:
     File(const fs::path& path);
@@ -25,5 +24,3 @@ private:
     const fs::path mPath;
     const wxDateTime mDateTime;
 };
-
-}; // namespace DB

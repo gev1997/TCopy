@@ -2,10 +2,9 @@
 
 #include "File.h"
 
-namespace DB
-{
+namespace DB { class Manager; };
 
-class Manager
+class DB::Manager
 {
 public:
     Manager();
@@ -32,5 +31,3 @@ private:
     FileType mVisibleFiles;
     ExtensionType mExtensions;
 };
-
-};  // namespace DB
