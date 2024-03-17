@@ -2,7 +2,7 @@
 
 #include <wx/filepicker.h>
 
-#include "wxDirTextCtrl.h"
+#include "DirTextCtrl.h"
 
 namespace gui { class DirPicker; };
 

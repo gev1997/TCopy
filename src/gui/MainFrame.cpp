@@ -1,4 +1,4 @@
-#include "wxMainFrame.h"
+#include "MainFrame.h"
 #include "../FileSyncApp.h"
 
 gui::MainFrame::MainFrame()

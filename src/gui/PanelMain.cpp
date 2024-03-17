@@ -1,4 +1,4 @@
-#include "wxPanelMain.h"
+#include "PanelMain.h"
 #include "../FileSyncApp.h"
 
 gui::PanelMain::PanelMain(wxFrame* parent)

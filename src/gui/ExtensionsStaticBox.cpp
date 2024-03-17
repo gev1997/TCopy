@@ -1,4 +1,4 @@
-#include "wxExtensionsStaticBox.h"
+#include "ExtensionsStaticBox.h"
 #include "ExtensionFilterEvent.h"
 
 gui::ExtensionsStaticBox::ExtensionsStaticBox(wxWindow* parent)

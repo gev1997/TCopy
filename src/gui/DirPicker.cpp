@@ -1,4 +1,4 @@
-#include "wxDirPicker.h"
+#include "DirPicker.h"
 
 gui::DirPicker::DirPicker(wxWindow* parent, const wxString& label, const wxPoint& pos, const wxSize& size)
     : wxDirPickerCtrl{parent, wxID_ANY, wxEmptyString, wxDirSelectorPromptStr, pos, size}

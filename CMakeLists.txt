@@ -18,22 +18,22 @@ add_executable(FileSync WIN32
     src/DB/File.cpp
     src/gui/ExtensionFilterEvent.h
     src/gui/ExtensionFilterEvent.cpp
-    src/gui/wxMainFrame.h
-    src/gui/wxMainFrame.cpp
-    src/gui/wxPanelBase.h
-    src/gui/wxPanelBase.cpp
-    src/gui/wxPanelStart.h
-    src/gui/wxPanelStart.cpp
-    src/gui/wxPanelMain.h
-    src/gui/wxPanelMain.cpp
-    src/gui/wxDirPicker.h
-    src/gui/wxDirPicker.cpp
-    src/gui/wxDirTextCtrl.h
-    src/gui/wxDirTextCtrl.cpp
-    src/gui/wxFileStaticBox.h
-    src/gui/wxFileStaticBox.cpp
-    src/gui/wxExtensionsStaticBox.h
-    src/gui/wxExtensionsStaticBox.cpp
+    src/gui/MainFrame.h
+    src/gui/MainFrame.cpp
+    src/gui/PanelBase.h
+    src/gui/PanelBase.cpp
+    src/gui/PanelStart.h
+    src/gui/PanelStart.cpp
+    src/gui/PanelMain.h
+    src/gui/PanelMain.cpp
+    src/gui/DirPicker.h
+    src/gui/DirPicker.cpp
+    src/gui/DirTextCtrl.h
+    src/gui/DirTextCtrl.cpp
+    src/gui/FileStaticBox.h
+    src/gui/FileStaticBox.cpp
+    src/gui/ExtensionsStaticBox.h
+    src/gui/ExtensionsStaticBox.cpp
 )
 
 target_precompile_headers(FileSync PRIVATE src/FileSync_precomp.h)

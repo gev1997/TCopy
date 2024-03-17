@@ -1,4 +1,4 @@
-#include "wxDirTextCtrl.h"
+#include "DirTextCtrl.h"
 
 gui::DirTextCtrl::DirTextCtrl(wxWindow* parent, const wxPoint& pos, const wxSize& size)
     : wxTextCtrl{parent, wxID_ANY, wxEmptyString, pos, size}

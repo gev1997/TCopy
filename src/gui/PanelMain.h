@@ -2,9 +2,9 @@
 
 #include <wx/button.h>
 
-#include "wxPanelBase.h"
-#include "wxFileStaticBox.h"
-#include "wxExtensionsStaticBox.h"
+#include "PanelBase.h"
+#include "FileStaticBox.h"
+#include "ExtensionsStaticBox.h"
 #include "ExtensionFilterEvent.h"
 
 namespace gui { class PanelMain; };

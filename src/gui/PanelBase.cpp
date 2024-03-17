@@ -1,4 +1,4 @@
-#include "wxPanelBase.h"
+#include "PanelBase.h"
 #include "../FileSyncApp.h"
 
 gui::PanelBase::PanelBase(wxFrame* parent, const wxSize& size)

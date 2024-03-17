@@ -1,6 +1,6 @@
 #include <wx/utils.h>
 
-#include "wxFileStaticBox.h"
+#include "FileStaticBox.h"
 
 gui::FileStaticBox::FileStaticBox(wxWindow* parent)
     : wxStaticBox{parent, wxID_ANY, wxEmptyString, {10, 30}, {400, 420}}

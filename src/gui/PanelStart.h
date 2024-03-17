@@ -3,8 +3,8 @@
 #include <wx/button.h>
 #include <wx/checkbox.h>
 
-#include "wxPanelBase.h"
-#include "wxDirPicker.h"
+#include "PanelBase.h"
+#include "DirPicker.h"
 
 namespace gui { class PanelStart; };
 

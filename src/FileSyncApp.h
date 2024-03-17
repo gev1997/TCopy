@@ -2,7 +2,7 @@
 
 #include <wx/app.h>
 
-#include "gui/wxMainFrame.h"
+#include "gui/MainFrame.h"
 #include "DB/Manager.h"
 #include "FileSyncRegistery.h"
 

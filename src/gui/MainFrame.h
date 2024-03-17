@@ -2,8 +2,8 @@
 
 #include <wx/frame.h>
 
-#include "wxPanelStart.h"
-#include "wxPanelMain.h"
+#include "PanelStart.h"
+#include "PanelMain.h"
 
 class FileSyncApp;
 
