@@ -32,29 +32,6 @@ std::vector<int> GUI::FileStaticBox::GetCheckedItems() const
     return {checkedItems.begin(), checkedItems.end()};
 }
 
-void GUI::FileStaticBox::CheckAll(bool check)
-{
-    for (int i = 0; i < mCheckListBox->GetCount(); ++i)
-        mCheckListBox->Check(i, check);
-}
-
-void GUI::FileStaticBox::UpdateSelectAllState()
-{
-    wxArrayInt checkedItems;
-    mCheckListBox->GetCheckedItems(checkedItems);
-    
-    wxCheckBoxState state;
-
-    if (checkedItems.GetCount() == mCheckListBox->GetCount())
-        state = wxCheckBoxState::wxCHK_CHECKED;
-    else if (!checkedItems.GetCount())
-        state = wxCheckBoxState::wxCHK_UNCHECKED;
-    else
-        state = wxCheckBoxState::wxCHK_UNDETERMINED;
-
-    mSelectAll->Set3StateValue(state);
-}
-
 void GUI::FileStaticBox::OnFileChecked(wxCommandEvent& event)
 {
     UpdateSelectAllState();

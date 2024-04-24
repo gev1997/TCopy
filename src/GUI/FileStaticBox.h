@@ -14,8 +14,6 @@ public:
     std::vector<int> GetCheckedItems() const;
 
 private:
-    void CheckAll(bool check);
-    void UpdateSelectAllState();
     void OnFileChecked(wxCommandEvent& event);
     void OnFileDoubleClicked(wxCommandEvent& event);
     void OnFileAllChecked(wxCommandEvent& event);

@@ -13,6 +13,10 @@ public:
     virtual ~StaticBoxBase() = default;
 
 protected:
+    void CheckAll(bool check);
+    void UpdateSelectAllState();
+
+protected:
     wxCheckListBox* mCheckListBox;
     wxCheckBox* mSelectAll;
 };
