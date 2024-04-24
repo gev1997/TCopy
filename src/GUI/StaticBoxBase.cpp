@@ -12,7 +12,7 @@ void GUI::StaticBoxBase::CheckAll(bool check)
         mCheckListBox->Check(i, check);
 }
 
-void GUI::StaticBoxBase::UpdateSelectAllState()
+void GUI::StaticBoxBase::UpdateCheckAllState()
 {
     wxArrayInt checkedItems;
     mCheckListBox->GetCheckedItems(checkedItems);

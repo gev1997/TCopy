@@ -34,7 +34,7 @@ std::vector<int> GUI::FileStaticBox::GetCheckedItems() const
 
 void GUI::FileStaticBox::OnFileChecked(wxCommandEvent& event)
 {
-    UpdateSelectAllState();
+    UpdateCheckAllState();
 }
 
 void GUI::FileStaticBox::OnFileDoubleClicked(wxCommandEvent& event)
@@ -50,7 +50,7 @@ void GUI::FileStaticBox::OnFileDoubleClicked(wxCommandEvent& event)
             mCheckListBox->Check(i, true);
     }
 
-    UpdateSelectAllState();
+    UpdateCheckAllState();
 }
 
 void GUI::FileStaticBox::OnFileAllChecked(wxCommandEvent& event)

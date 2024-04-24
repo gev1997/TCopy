@@ -38,7 +38,7 @@ void GUI::ExtensionsStaticBox::OnExtensionChecked(wxCommandEvent& event)
     newEvent.SetFilter(isChecked ? DB::FilterType::Insert : DB::FilterType::Remove);
     GetParent()->GetEventHandler()->ProcessEvent(newEvent);
     
-    UpdateSelectAllState();
+    UpdateCheckAllState();
 }
 
 void GUI::ExtensionsStaticBox::OnExtensionAllChecked(wxCommandEvent& event)

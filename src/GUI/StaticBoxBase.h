@@ -14,7 +14,7 @@ public:
 
 protected:
     void CheckAll(bool check);
-    void UpdateSelectAllState();
+    void UpdateCheckAllState();
 
 protected:
     wxCheckListBox* mCheckListBox;
