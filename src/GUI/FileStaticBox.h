@@ -1,12 +1,13 @@
 #pragma once
 
-#include <wx/statbox.h>
 #include <wx/checklst.h>
 #include <wx/checkbox.h>
 
+#include "StaticBoxBase.h"
+
 namespace GUI { class FileStaticBox; };
 
-class GUI::FileStaticBox : public wxStaticBox
+class GUI::FileStaticBox : public StaticBoxBase
 {
 public:
     FileStaticBox(wxWindow* parent);

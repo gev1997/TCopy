@@ -30,6 +30,8 @@ add_executable(FileSync WIN32
     src/GUI/DirPicker.cpp
     src/GUI/DirTextCtrl.h
     src/GUI/DirTextCtrl.cpp
+    src/GUI/StaticBoxBase.h
+    src/GUI/StaticBoxBase.cpp
     src/GUI/FileStaticBox.h
     src/GUI/FileStaticBox.cpp
     src/GUI/ExtensionsStaticBox.h

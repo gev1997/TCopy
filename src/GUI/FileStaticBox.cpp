@@ -3,7 +3,7 @@
 #include "FileStaticBox.h"
 
 GUI::FileStaticBox::FileStaticBox(wxWindow* parent)
-    : wxStaticBox{parent, wxID_ANY, wxEmptyString, {10, 30}, {400, 420}}
+    : StaticBoxBase{parent, {10, 30}, {400, 420}}
     , mFileListBox{new wxCheckListBox(this, wxID_ANY, {10, 30}, {380, 380})}
     , mSelectAll{new wxCheckBox(this, wxID_ANY, "Select All", {13, 10}, {90, 20}, wxCHK_3STATE)}
 {
