@@ -3,13 +3,14 @@
 
 GUI::ExtensionsStaticBox::ExtensionsStaticBox(wxWindow* parent)
     : StaticBoxBase{parent, {420, 30}, {155, 230}}
-    , mExtensionsListBox{new wxCheckListBox(this, wxID_ANY, {10, 55}, {135, 165})}
     , mExtensionsSearchCtrl{new wxTextCtrl(this, wxID_ANY, wxEmptyString, {10, 30}, {135, 20}, wxTE_PROCESS_ENTER)}
-    , mSelectAll{new wxCheckBox(this, wxID_ANY, "Select All", {13, 10}, {70, 20}, wxCHK_3STATE)}
 {
+    mCheckListBox->Create(this, wxID_ANY, {10, 55}, {135, 165});
+    mSelectAll->Create(this, wxID_ANY, "Select All", {13, 10}, {70, 20}, wxCHK_3STATE);
+
     mExtensionsSearchCtrl->SetHint("Search");
 
-    mExtensionsListBox->Bind(wxEVT_CHECKLISTBOX, &ExtensionsStaticBox::OnExtensionChecked, this);
+    mCheckListBox->Bind(wxEVT_CHECKLISTBOX, &ExtensionsStaticBox::OnExtensionChecked, this);
     mExtensionsSearchCtrl->Bind(wxEVT_TEXT, &ExtensionsStaticBox::OnExtensionSearch, this);
     mExtensionsSearchCtrl->Bind(wxEVT_TEXT_ENTER, &ExtensionsStaticBox::OnExtensionSearchEnter, this);
     mSelectAll->Bind(wxEVT_CHECKBOX, &ExtensionsStaticBox::OnExtensionAllChecked, this);
@@ -17,30 +18,30 @@ GUI::ExtensionsStaticBox::ExtensionsStaticBox(wxWindow* parent)
 
 void GUI::ExtensionsStaticBox::FillControlsData(const DB::ExtensionType& extensions)
 {
-    mExtensionsListBox->Clear();
+    mCheckListBox->Clear();
     mExtensionsSearchCtrl->ChangeValue(wxEmptyString);
     mSelectAll->Set3StateValue(wxCheckBoxState::wxCHK_CHECKED);
 
     wxArrayString extensionItems;
     std::ranges::copy(extensions.begin(), extensions.end(), std::back_inserter(extensionItems));
-    mExtensionsListBox->InsertItems(extensionItems, 0);
+    mCheckListBox->InsertItems(extensionItems, 0);
     CheckAll(true);
 }
 
 void GUI::ExtensionsStaticBox::CheckAll(bool check)
 {
-    for (int i = 0; i < mExtensionsListBox->GetCount(); ++i)
-        mExtensionsListBox->Check(i, check);
+    for (int i = 0; i < mCheckListBox->GetCount(); ++i)
+        mCheckListBox->Check(i, check);
 }
 
 void GUI::ExtensionsStaticBox::UpdateSelectAllState()
 {
     wxArrayInt checkedItems;
-    mExtensionsListBox->GetCheckedItems(checkedItems);
+    mCheckListBox->GetCheckedItems(checkedItems);
     
     wxCheckBoxState state;
 
-    if (checkedItems.GetCount() == mExtensionsListBox->GetCount())
+    if (checkedItems.GetCount() == mCheckListBox->GetCount())
         state = wxCheckBoxState::wxCHK_CHECKED;
     else if (!checkedItems.GetCount())
         state = wxCheckBoxState::wxCHK_UNCHECKED;
@@ -53,7 +54,7 @@ void GUI::ExtensionsStaticBox::UpdateSelectAllState()
 void GUI::ExtensionsStaticBox::OnExtensionChecked(wxCommandEvent& event)
 {
     unsigned int item = event.GetInt();
-    bool isChecked = mExtensionsListBox->IsChecked(item);
+    bool isChecked = mCheckListBox->IsChecked(item);
 
     ExtensionFilterEvent newEvent;
     newEvent.SetExtension(event.GetString());
@@ -85,30 +86,30 @@ void GUI::ExtensionsStaticBox::OnExtensionSearch(wxCommandEvent& event)
 
     int item = wxNOT_FOUND;
 
-    for (int i = 0; i < mExtensionsListBox->GetCount(); ++i)
+    for (int i = 0; i < mCheckListBox->GetCount(); ++i)
     {
-        if (mExtensionsListBox->GetString(i) == searchText)
+        if (mCheckListBox->GetString(i) == searchText)
         {
             item = i;
             break;
         }
     }
 
-    mExtensionsListBox->SetSelection(item);
+    mCheckListBox->SetSelection(item);
 }
 
 void GUI::ExtensionsStaticBox::OnExtensionSearchEnter(wxCommandEvent& event)
 {
-    int item = mExtensionsListBox->GetSelection();
+    int item = mCheckListBox->GetSelection();
 
     if (item == wxNOT_FOUND)
         return;
 
-    bool isChecked = mExtensionsListBox->IsChecked(item);
-    mExtensionsListBox->Check(item, !isChecked);
+    bool isChecked = mCheckListBox->IsChecked(item);
+    mCheckListBox->Check(item, !isChecked);
 
     wxCommandEvent commandEvent(wxEVT_CHECKLISTBOX);
     commandEvent.SetInt(item);
-    commandEvent.SetString(mExtensionsListBox->GetString(item));
-    mExtensionsListBox->GetEventHandler()->ProcessEvent(commandEvent);
+    commandEvent.SetString(mCheckListBox->GetString(item));
+    mCheckListBox->GetEventHandler()->ProcessEvent(commandEvent);
 }

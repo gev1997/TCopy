@@ -1,8 +1,5 @@
 #pragma once
 
-#include <wx/checklst.h>
-#include <wx/checkbox.h>
-
 #include "StaticBoxBase.h"
 
 namespace GUI { class FileStaticBox; };
@@ -22,8 +19,4 @@ private:
     void OnFileChecked(wxCommandEvent& event);
     void OnFileDoubleClicked(wxCommandEvent& event);
     void OnFileAllChecked(wxCommandEvent& event);
-
-private:
-    wxCheckListBox* mFileListBox;
-    wxCheckBox* mSelectAll;
 };

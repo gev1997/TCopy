@@ -1,8 +1,6 @@
 #pragma once
 
-#include <wx/checklst.h>
 #include <wx/textctrl.h>
-#include <wx/checkbox.h>
 
 #include "StaticBoxBase.h"
 
@@ -25,7 +23,5 @@ private:
     void OnExtensionSearchEnter(wxCommandEvent& event);
 
 private:
-    wxCheckListBox* mExtensionsListBox;
     wxTextCtrl* mExtensionsSearchCtrl;
-    wxCheckBox* mSelectAll;
 };
