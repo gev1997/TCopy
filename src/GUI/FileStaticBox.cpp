@@ -1,5 +1,3 @@
-#include <wx/utils.h>
-
 #include "FileStaticBox.h"
 
 GUI::FileStaticBox::FileStaticBox(wxWindow* parent)
